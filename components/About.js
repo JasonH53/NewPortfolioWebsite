@@ -9,7 +9,7 @@ const About = () => {
       {
         companyLogo: "https://static.cdnlogo.com/logos/h/67/huawei-thumb.png",
         companyName: "Huawei Canada",
-        role: "Incomming Software Engineering Intern",
+        role: "Incoming Software Engineering Intern",
         date: "Jan 2025 - Apr 2025"
       },
       {
