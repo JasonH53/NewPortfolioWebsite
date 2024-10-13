@@ -41,7 +41,7 @@ const About = () => {
 
 return (
     <section id="about">
-      <h2>Jason's Portfolio</h2>
+      <h2>Jason&apos;s Portfolio</h2>
       <div className="about-content">
             <Image 
                     src={headshot} 
@@ -52,7 +52,7 @@ return (
             />
             <p>Hi! I am Jason, a software developer with a background in Computer Science and AI. I am very passionate about low-level programing and artificial intelligence.
 
-                I am also looking for Summer and Fall 25' internships!
+                I am also looking for Summer and Fall 2025 internships!
             </p>
         </div>
       
