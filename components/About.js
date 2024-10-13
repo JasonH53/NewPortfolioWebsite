@@ -1,3 +1,4 @@
+import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import headshot from '../public/assets/headshot.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -41,11 +42,29 @@ const About = () => {
         }
       ];
 
+      const [revealIndex, setRevealIndex] = useState(-1);
+      const itemsToReveal = useRef([]);
+  
+      useEffect(() => {
+          itemsToReveal.current = document.querySelectorAll('.reveal-item');
+          const revealNextItem = () => {
+              setRevealIndex((prevIndex) => {
+                  const nextIndex = prevIndex + 1;
+                  if (nextIndex < itemsToReveal.current.length) {
+                      itemsToReveal.current[nextIndex].classList.add('reveal');
+                      setTimeout(revealNextItem, 500); // Adjust timing here
+                  }
+                  return nextIndex;
+              });
+          };
+  
+          revealNextItem();
+      }, []);
 
 return (
     <section id="about">
-      <h2>Jason&apos;s Portfolio</h2>
-      <div className="about-content">
+      <h2 className="reveal-item hidden">Jason&apos;s Portfolio</h2>
+      <div className="about-content reveal-item hidden">
             <Image 
                     src={headshot} 
                     alt="Jason's headshot" 
@@ -76,31 +95,36 @@ return (
           </div>
         </div>
 
-      <h3>Experiences</h3>
-      {workExperiences.map((experience, index) => (
-        <div key={index} className="work-experience glow-on-hover">
-          <img src={experience.companyLogo} alt={`${experience.companyName} logo`} />
-          <div className="work-info">
-            <h4>{experience.companyName}</h4>
-            <p>{experience.role} | {experience.date}</p>
-          </div>
-        </div>
-      ))}
+        <h3 className="reveal-item hidden">Experiences</h3>
+            {workExperiences.map((experience, index) => (
+                <div 
+                    key={index} 
+                    className="work-experience glow-on-hover reveal-item hidden"
+                >
+                    <img src={experience.companyLogo} alt={`${experience.companyName} logo`} />
+                    <div className="work-info">
+                        <h4>{experience.companyName}</h4>
+                        <p>{experience.role} | {experience.date}</p>
+                    </div>
+                </div>
+            ))}
 
-    <h3>Education</h3>
-    {education.map((edu, index) => (
-        <div key={index} className="education-item glow-on-hover">
-            <img src={edu.institutionLogo} alt={`${edu.institution} logo`} />
-            <div className="education-info">
-                <h4>{edu.institution}</h4>
-                <p>{edu.degree}</p>
-                <p>{edu.date}</p>
-            </div>
-        </div>
-        ))}
-
-    </section>
-  );
+            <h3 className="reveal-item hidden">Education</h3>
+            {education.map((edu, index) => (
+                <div 
+                    key={index} 
+                    className="education-item glow-on-hover reveal-item hidden"
+                >
+                    <img src={edu.institutionLogo} alt={`${edu.institution} logo`} />
+                    <div className="education-info">
+                        <h4>{edu.institution}</h4>
+                        <p>{edu.degree}</p>
+                        <p>{edu.date}</p>
+                    </div>
+                </div>
+            ))}
+        </section>
+    );
 };
 
 export default About;
