@@ -1,5 +1,8 @@
 import Image from 'next/image';
 import headshot from '../public/assets/headshot.jpg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLinkedin, faGithub, faMedium } from '@fortawesome/free-brands-svg-icons';
+import { faFileAlt } from '@fortawesome/free-solid-svg-icons';
 
 const About = () => {
     const workExperiences = [
@@ -50,12 +53,29 @@ return (
                     height={200} 
                     className="headshot"
             />
-            <p>Hi! I am Jason, a software developer with a background in Computer Science and AI. I am very passionate about low-level programing and artificial intelligence.
-
-                I am also looking for Summer and Fall 2025 internships!
+          <div className="about-text">
+            <p>Hi! I am Jason, a software developer with a background in Computer Science and AI. I am very
+              passionate about low-level programing and artificial intelligence.
+              I am also looking for Summer and Fall 2025 internships!
             </p>
+
+            <div className="social-links">
+          <a href="https://www.linkedin.com/in/jasonhonhk/" target="_blank" rel="noopener noreferrer" className="social-button">
+              <FontAwesomeIcon icon={faLinkedin} />
+          </a>
+          <a href="https://github.com/JasonH53" target="_blank" rel="noopener noreferrer" className="social-button">
+              <FontAwesomeIcon icon={faGithub} />
+          </a>
+          <a href="https://medium.com/@jasonh53" target="_blank" rel="noopener noreferrer" className="social-button">
+              <FontAwesomeIcon icon={faMedium} />
+          </a>
+          <a href="./assets/resume.pdf" target="_blank" rel="noopener noreferrer" className="social-button">
+              <FontAwesomeIcon icon={faFileAlt} />
+          </a>
+          </div>
+          </div>
         </div>
-      
+
       <h3>Experiences</h3>
       {workExperiences.map((experience, index) => (
         <div key={index} className="work-experience glow-on-hover">
