@@ -112,7 +112,7 @@ Available commands:
 
   const showWelcomeMessage = () => {
     const welcomeMessage = `
-Welcome to the Jason's notes1
+Welcome to the Jason's notes!
 Here are the available commands:
 
 - ls / dir: List the directory structure
