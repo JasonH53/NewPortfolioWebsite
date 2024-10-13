@@ -1,0 +1,44 @@
+.cli {
+  background-color: #000;
+  color: #CBC3E3;
+  font-family: monospace;
+  padding: 20px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  height: 80%
+}
+
+.output {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.line {
+  margin-bottom: 5px;
+  white-space: pre-wrap;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+}
+
+.prompt {
+  margin-right: 10px;
+}
+
+.input {
+  background-color: transparent;
+  border: none;
+  color: #0f0;
+  font-family: monospace;
+  font-size: 16px;
+  flex-grow: 1;
+  outline: none;
+}
+
+.link {
+  color: #00f;
+  text-decoration: underline;
+}
