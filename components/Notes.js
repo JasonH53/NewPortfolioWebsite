@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import styles from './notes.module.css';
+import styles from './Notes.module.css';
 
 const CLI = () => {
   const [input, setInput] = useState('');
