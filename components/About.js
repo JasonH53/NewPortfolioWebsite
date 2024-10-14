@@ -46,20 +46,22 @@ const About = () => {
       const itemsToReveal = useRef([]);
   
       useEffect(() => {
-          itemsToReveal.current = document.querySelectorAll('.reveal-item');
-          const revealNextItem = () => {
-              setRevealIndex((prevIndex) => {
-                  const nextIndex = prevIndex + 1;
-                  if (nextIndex < itemsToReveal.current.length) {
-                      itemsToReveal.current[nextIndex].classList.add('reveal');
-                      setTimeout(revealNextItem, 500); // Adjust timing here
-                  }
-                  return nextIndex;
-              });
-          };
-  
-          revealNextItem();
-      }, []);
+        itemsToReveal.current = document.querySelectorAll('.reveal-item');
+        const revealNextItem = () => {
+            setRevealIndex((prevIndex) => {
+                const nextIndex = prevIndex + 1;
+                if (nextIndex < itemsToReveal.current.length) {
+                    const currentItem = itemsToReveal.current[nextIndex];
+                    currentItem.classList.add('reveal');
+                    currentItem.classList.remove('hidden'); // Remove the hidden class
+                    setTimeout(revealNextItem, 500); // Adjust timing here
+                }
+                return nextIndex;
+            });
+        };
+    
+        revealNextItem();
+    }, []);
 
 return (
     <section id="about">
