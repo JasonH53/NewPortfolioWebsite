@@ -53,8 +53,8 @@ const About = () => {
                 if (nextIndex < itemsToReveal.current.length) {
                     const currentItem = itemsToReveal.current[nextIndex];
                     currentItem.classList.add('reveal');
-                    currentItem.classList.remove('hidden'); // Remove the hidden class
-                    setTimeout(revealNextItem, 500); // Adjust timing here
+                    currentItem.classList.remove('hidden');
+                    setTimeout(revealNextItem, 500);
                 }
                 return nextIndex;
             });
