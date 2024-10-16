@@ -1,30 +1,37 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import chessImage from '../public/assets/chess.png';
-import voicelensImage from '../public/assets/voicelens.webp';
-import uwcompassImage from '../public/assets/uwcompass.jpg';
+import voicelensImage from '../public/assets/voicelens.png';
+import uwcompassImage from '../public/assets/uwcompass.png';
 import uwschedulerImage from '../public/assets/uwscheduler.png';
 import slmodImage from '../public/assets/slmod.png';
+import scalaIcon from '../public/assets/scala-icon.png'
 
 const Projects = () => {
   const projects = [
-    { 
-      name: 'Chess Engine', 
-      description: 'Chess Engine with various levels of AI opponents, built with C++',
-      link: 'https://github.com/pacman-ty/chess-engin',
-      image: chessImage
-    },
     { 
       name: 'VoiceLens', 
       description: 'Empowering mute individuals with real-time lip reading and translation, built for Hack The North 2024. ',
       link: 'https://devpost.com/software/voicelens',
       image: voicelensImage
     },
+    {
+      name: 'Lacs Compiler',
+      description: 'A compiler for a Scala-type language with garbage collection, dynamic memory allocation and more. Coursework for an enriched compilers course, CS 241E.',
+      link: 'https://student.cs.uwaterloo.ca/~cs241e/index.shtml',
+      image: scalaIcon
+    },
     { 
       name: 'UWCompass', 
       description: 'Degree requirement tracker that parses your transcript to help you plan your courses, built with React',
       link: 'https://jasonh53.github.io/UWCompass/',
       image: uwcompassImage
+    },
+    { 
+      name: 'Chess Engine', 
+      description: 'Chess Engine with various levels of AI opponents, built with C++',
+      link: 'https://github.com/pacman-ty/chess-engin',
+      image: chessImage
     },
     {
       name: 'UWScheduler',
