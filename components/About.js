@@ -54,7 +54,7 @@ const About = () => {
                     const currentItem = itemsToReveal.current[nextIndex];
                     currentItem.classList.add('reveal');
                     currentItem.classList.remove('hidden');
-                    setTimeout(revealNextItem, 500);
+                    setTimeout(revealNextItem, 300);
                 }
                 return nextIndex;
             });
