@@ -43,6 +43,7 @@ const Projects = () => {
   return (
     <section id="projects">
       <h2>Projects</h2>
+      <div className="wrapper-container">
       {projects.map((project, index) => (
         <Link 
           key={index} 
@@ -74,6 +75,7 @@ const Projects = () => {
           </a>
         </Link>
       ))}
+      </div>
     </section>
   );
 };

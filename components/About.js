@@ -98,6 +98,7 @@ return (
         </div>
 
         <h3 className="reveal-item hidden">Experiences</h3>
+            <div className="wrapper-container">
             {workExperiences.map((experience, index) => (
                 <div 
                     key={index} 
@@ -110,8 +111,10 @@ return (
                     </div>
                 </div>
             ))}
+            </div>
 
             <h3 className="reveal-item hidden">Education</h3>
+            <div className="wrapper-container">
             {education.map((edu, index) => (
                 <div 
                     key={index} 
@@ -125,6 +128,7 @@ return (
                     </div>
                 </div>
             ))}
+            </div>
         </section>
     );
 };

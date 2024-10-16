@@ -135,6 +135,10 @@ h2 {
   transform: translateY(-2px);
 }
 
+.wrapper-container {
+  padding: 0 20px 0 20px;
+}
+
 .project a {
   color: rgb(var(--accent-rgb));
   text-decoration: none;
@@ -171,7 +175,7 @@ h2 {
     box-shadow: 0 0 5px var(--glow-color);
   }
   50% {
-    box-shadow: 0 0 20px var(--glow-color), 0 0 30px var(--glow-color);
+    box-shadow: 0 0 8px var(--glow-color), 0 0 19px var(--glow-color);
   }
   100% {
     box-shadow: 0 0 5px var(--glow-color);
@@ -326,3 +330,4 @@ h2 {
 .reveal {
   animation: fadeIn 0.5s ease-out forwards;
 }
+
