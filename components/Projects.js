@@ -30,7 +30,7 @@ const Projects = () => {
     { 
       name: 'Chess Engine', 
       description: 'Chess Engine with various levels of AI opponents, built with C++',
-      link: 'https://github.com/pacman-ty/chess-engin',
+      link: 'https://github.com/pacman-ty/chess-engine',
       image: chessImage
     },
     {
