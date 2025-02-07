@@ -23,7 +23,7 @@ const About = () => {
         companyLogo: "https://upload.wikimedia.org/wikipedia/en/6/6e/University_of_Waterloo_seal.svg",
         companyName: "University of Waterloo",
         role: "STAT 230 Teaching Assistant",
-        date: "Sept 2024 - Present"
+        date: "Sept 2024 - Dec 2024"
       },
       {
         companyLogo: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAbFBMVEVHcEwwfQovfQkwfQoofHIdergwfQkvfQkdergdergdergcerkvfQwdergaetQvfQgder4cerwpfDMvfQwbesMne2UvfQgdergnfEQderUYed8aetMrfVUderkufQwvfQwbesItfCQvfQwvfQwQQfQsAAAAJHRSTlMAE7mLCSeW/3Dv/z8uy4Fjqf7o3P/+64yd///5uLsgsEdTxU/BnGAFAAAAq0lEQVR4Ac3QBQKDQAwAwVACKSd1w+3/b6zgkLovzqAHf5JhXLGRicBCq9jYxBHHjnAkgEmkhmZpcWoyJbLZfbPC5vMFLRVDXeJqvZkCw22Nzdfwd652BvDkTAhXeDM406y4TSyAh5Yo8gPgybAw1w+R41aU6K3tiOHYKdVfUMwUk8LmSUqUKXZvEmo9k4AjaoaPhzbRJoJLTZcUX1YVt2PPi8z8MmJkwIsdAGKTCa5gqFMdAAAAAElFTkSuQmCC",
@@ -38,7 +38,7 @@ const About = () => {
           institutionLogo: "https://upload.wikimedia.org/wikipedia/en/6/6e/University_of_Waterloo_seal.svg",
           institution: "University of Waterloo",
           degree: "Bachelors of Computer Science, Artificial Intelligence Specialization",
-          date: "GPA: 3.96 / 4.0 | 2023 - 2027"
+          date: "GPA: 3.95 / 4.0"
         }
       ];
 
