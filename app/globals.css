@@ -85,8 +85,10 @@ h2 {
 
 .social-links {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 20px;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .social-button {
@@ -110,6 +112,15 @@ h2 {
 }
 
 @media (max-width: 600px) {
+  .cs-webbring {
+    margin-left: 0;
+    margin-top: 8px;
+  }
+  
+  .social-links {
+    justify-content: center;
+  }
+
   .social-links {
       flex-wrap: wrap;
   }
@@ -331,3 +342,40 @@ h2 {
   animation: fadeIn 0.5s ease-out forwards;
 }
 
+.cs-webbring {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px 4px 8px;
+  background: rgba(var(--accent-rgb), 0.15);
+  border-radius: 20px;
+  border: 1px solid rgba(var(--accent-rgb), 0.4);
+}
+
+.cs-webbring .social-button {
+  width: 32px;
+  height: 32px;
+  font-size: 16px;
+  background: transparent;
+  border: none;
+}
+
+.cs-webbring .social-button:hover {
+  background: rgba(var(--accent-rgb), 0.3);
+  box-shadow: none;
+  transform: none;
+}
+
+.cs-webbring img {
+  transition: filter 0.3s ease;
+}
+
+.cs-webbring:hover {
+  box-shadow: 0 0 15px var(--glow-color);
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
+.cs-webbring:hover img {
+  filter: brightness(1.2);
+}
