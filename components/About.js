@@ -93,17 +93,6 @@ const About = () => {
             <a href="./assets/resume.pdf" target="_blank" rel="noopener noreferrer" className="social-button">
               <FontAwesomeIcon icon={faFileAlt} />
             </a>
-            <div className="cs-webbring">
-              <a href='https://cs.uwatering.com/#https://jasonhon.com/?nav=prev' className="social-button" aria-label="Previous site">←</a>
-              <a href='https://cs.uwatering.com/#https://jasonhon.com/' target='_blank' className="social-button" rel="noopener noreferrer">
-                <img
-                  src='https://cs.uwatering.com/icon.white.svg'
-                  alt='CS Webring'
-                  style={{ width: '24px', height: 'auto' }}
-                />
-              </a>
-              <a href='https://cs.uwatering.com/#https://jasonhon.com/?nav=next' className="social-button" aria-label="Next site">→</a>
-            </div>
           </div>
         </div>
       </div>
@@ -139,6 +128,17 @@ const About = () => {
             </div>
           </div>
         ))}
+      </div>
+      <div className="cs-webbring">
+        <a href='https://cs.uwatering.com/#https://jasonhon.com/?nav=prev' className="social-button" aria-label="Previous site">←</a>
+        <a href='https://cs.uwatering.com/#https://jasonhon.com/' target='_blank' className="social-button" rel="noopener noreferrer">
+          <img
+            src='https://cs.uwatering.com/icon.white.svg'
+            alt='CS Webring'
+            style={{ width: '24px', height: 'auto' }}
+          />
+        </a>
+        <a href='https://cs.uwatering.com/#https://jasonhon.com/?nav=next' className="social-button" aria-label="Next site">→</a>
       </div>
     </section>
   );
