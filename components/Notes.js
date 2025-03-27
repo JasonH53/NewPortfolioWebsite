@@ -1,12 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
-import styles from './Notes.module.css';
 
-const CLI = () => {
+const Notes = () => {
   const [input, setInput] = useState('');
   const [output, setOutput] = useState([]);
   const inputRef = useRef(null);
   const outputRef = useRef(null);
-
+  
   const academicStructure = {
     'Fall 2023': {
       'No notes available': '',
@@ -92,7 +91,7 @@ const CLI = () => {
       if (academicStructure[term][courseName]) {
         const fileName = academicStructure[term][courseName];
         const link = `/assets/${fileName}`;
-        addOutput(<>Notes for {courseName}: <a href={link} target="_blank" rel="noopener noreferrer" className={styles.link}>{fileName}</a></>);
+        addOutput(<>Notes for {courseName}: <a href={link} target="_blank" rel="noopener noreferrer" className="link">{fileName}</a></>);
         return;
       }
     }
@@ -112,7 +111,7 @@ Available commands:
 
   const showWelcomeMessage = () => {
     const welcomeMessage = `
-Welcome to the Jason's notes!
+Welcome to Jason's notes!
 Here are the available commands:
 
 - ls / dir: List the directory structure
@@ -130,24 +129,24 @@ Type a command and press Enter to begin.
   };
 
   return (
-    <div className={styles.cli}>
-      <div className={styles.output} ref={outputRef}>
+    <div className="cli">
+      <div className="output" ref={outputRef}>
         {output.map((line, index) => (
-          <div key={index} className={styles.line}>{line}</div>
+          <div key={index} className="line">{line}</div>
         ))}
       </div>
-      <form onSubmit={handleSubmit} className={styles.form}>
-        <span className={styles.prompt}>$</span>
+      <form onSubmit={handleSubmit} className="form">
+        <span className="prompt">$</span>
         <input
           type="text"
           value={input}
           onChange={handleInputChange}
           ref={inputRef}
-          className={styles.input}
+          className="input"
         />
       </form>
     </div>
   );
 };
 
-export default CLI;
+export default Notes;

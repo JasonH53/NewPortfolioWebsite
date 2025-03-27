@@ -14,7 +14,6 @@ export default function Home() {
       <div className="content">
         {activeTab === 'about' && <About />}
         {activeTab === 'projects' && <Projects />}
-        {activeTab === 'notes' && <Notes />}
       </div>
     </main>
   );
