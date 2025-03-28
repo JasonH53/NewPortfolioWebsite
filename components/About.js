@@ -5,9 +5,7 @@ import Image from 'next/image';
 import Navbar from '../components/Navbar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub, faMedium } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope, faArrowRight, faBriefcase } from '@fortawesome/free-solid-svg-icons';
-import Notes from '../components/Notes';
-import headshot from '../public/assets/headshot.jpg';
+import { faEnvelope, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import chessImage from '../public/assets/chess.png';
 import voicelensImage from '../public/assets/voicelens.png';
 import uwcompassImage from '../public/assets/uwcompass.png';
@@ -29,47 +27,47 @@ export default function Home() {
   const projects = [
     {
       name: 'VoiceLens',
-      description: 'Empowering mute individuals with real-time lip reading and translation, built for Hack The North 2024.',
+      description: 'Empowering mute individuals with real-time lip reading and translation. Transcribes your lips into audible words in 5+ languages!',
       link: 'https://devpost.com/software/voicelens',
       image: voicelensImage,
       year: '2024',
-      skills: ['React', 'JavaScript', 'AI', 'Computer Vision']
+      skills: ['React', 'JavaScript', 'AI', 'Computer Vision', 'Hack The North 2024']
     },
-    {
-      name: 'Lacs Compiler',
-      description: 'A compiler for a Scala-type language with garbage collection, dynamic memory allocation and more. Coursework for an enriched compilers course, CS 241E.',
-      link: 'https://student.cs.uwaterloo.ca/~cs241e/index.shtml',
-      image: scalaIcon,
-      year: '2024',
-      skills: ['Compilers', 'Scala']
-    },
+    // {
+    //   name: 'Lacs Compiler',
+    //   description: 'A compiler for a Scala-type language with garbage collection, dynamic memory allocation and more. Coursework for an enriched compilers course, CS 241E.',
+    //   link: 'https://student.cs.uwaterloo.ca/~cs241e/index.shtml',
+    //   image: scalaIcon,
+    //   year: '2024',
+    //   skills: ['Compilers', 'Scala']
+    // },
     {
       name: 'UWCompass',
-      description: 'Degree requirement tracker that parses your transcript to help you plan your courses, built with React',
+      description: 'Degree requirement tracker that parses your transcript to identify what courses you need to graduate. Simplifies your course planning process!',
       link: 'https://jasonh53.github.io/UWCompass/',
       image: uwcompassImage,
-      year: '2023',
+      year: '2024',
       skills: ['React', 'JavaScript']
     },
     {
       name: 'Chess Engine',
-      description: 'Chess Engine with various levels of AI opponents, built with C++',
+      description: 'Chess Engine with 5 levels of AI opponents based on various advanced decision-making algorithms.',
       link: 'https://github.com/pacman-ty/chess-engine',
       image: chessImage,
       year: '2023',
       skills: ['C++', 'AI', 'OOP']
     },
-    {
-      name: 'UWScheduler',
-      description: 'Assignment Planner and Scheduler designed for UWaterloo students, built with MEAN stack.',
-      link: 'https://github.com/JasonH53/UWAssignmentPlanner',
-      image: uwschedulerImage,
-      year: '2023',
-      skills: ['Angular', 'MongoDB', 'Express', 'TypeScript']
-    },
+    // {
+    //   name: 'UWScheduler',
+    //   description: 'Assignment Planner and Scheduler designed for UWaterloo students, built with MEAN stack.',
+    //   link: 'https://github.com/JasonH53/UWAssignmentPlanner',
+    //   image: uwschedulerImage,
+    //   year: '2023',
+    //   skills: ['Angular', 'MongoDB', 'Express', 'TypeScript']
+    // },
     {
       name: 'SLMod',
-      description: 'QOL game modification for Minecraft Hypixel Skyblock with 20+ features, built with Java',
+      description: 'Utility game modification for Minecraft Hypixel Skyblock with 20+ features to ease your gameplay experience',
       link: 'https://github.com/JasonH53/SLM',
       image: slmodImage,
       year: '2023',
@@ -150,6 +148,12 @@ export default function Home() {
       <Navbar />
 
       <header className="hero">
+        <div className="video-background">
+          <video autoPlay muted loop playsInline className="background-video">
+            <source src="https://cdn.prod.website-files.com/630534398d9471ade12fc55f/663bd1303af50b30413aaa1f_Hero%20with%20Post-transcode.mp4" type="video/mp4" />
+          </video>
+          <div className="video-overlay"></div>
+        </div>
         <div className="hero-content">
           <h1 className="reveal-item">
             <span className="hero-letter">J</span>ason
@@ -159,8 +163,8 @@ export default function Home() {
           </div>
           <p className="hero-description reveal-item">
             Hi! I am Jason, a software developer with a background in Computer Science and AI.
-            I am very passionate about low-level programming and artificial intelligence.
-            I am also looking for Summer and Fall 2025 internships!
+            I am very passionate about machine learning and compilers.
+            I am also looking for Fall 2025 internships!
           </p>
           <div className="hero-cta reveal-item">
             <a href="#about" className="cta-button">

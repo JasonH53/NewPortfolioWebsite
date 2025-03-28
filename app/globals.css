@@ -1,6 +1,6 @@
 :root {
   --text-color: #ffffff;
-  --background-color: #0f0f0f;
+  --background-color: #000000;
   --accent-color: #333333;
   --hover-color: #ffffff;
   --spacing-unit: 1rem;
@@ -67,7 +67,6 @@ a {
   padding: 2rem 4rem;
   z-index: 1000;
   transition: background-color 0.3s ease;
-  mix-blend-mode: difference;
 }
 
 .navbar.scrolled {
@@ -88,6 +87,7 @@ a {
 .navbar-logo {
   display: flex;
   align-items: center;
+  mix-blend-mode: difference;
 }
 
 .navbar-logo h1 {
@@ -310,7 +310,7 @@ a {
 }
 
 .section-title {
-  font-size: 3.5rem; 
+  font-size: 3.5rem;
   font-weight: 600;
   letter-spacing: -0.05em;
   line-height: 1;
@@ -482,20 +482,23 @@ a {
   font-weight: 600;
 }
 
-.experience-list, .education-list {
+.experience-list,
+.education-list {
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 
-.experience-item, .education-item {
+.experience-item,
+.education-item {
   display: grid;
   grid-template-columns: 80px 1fr;
   gap: 2rem;
   align-items: start;
 }
 
-.experience-logo, .education-logo {
+.experience-logo,
+.education-logo {
   width: 80px;
   height: 80px;
   background-color: rgba(255, 255, 255, 0.05);
@@ -506,25 +509,29 @@ a {
   overflow: hidden;
 }
 
-.experience-logo img, .education-logo img {
+.experience-logo img,
+.education-logo img {
   width: 70%;
   height: auto;
   object-fit: contain;
 }
 
-.experience-company, .education-institution {
+.experience-company,
+.education-institution {
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
   font-weight: 600;
 }
 
-.experience-role, .education-degree {
+.experience-role,
+.education-degree {
   font-size: 1.1rem;
   opacity: 0.8;
   margin-bottom: 0.5rem;
 }
 
-.experience-date, .education-date {
+.experience-date,
+.education-date {
   font-size: 0.9rem;
   opacity: 0.6;
 }
@@ -627,7 +634,8 @@ a {
   opacity: 1;
 }
 
-.footer-location, .footer-copyright {
+.footer-location,
+.footer-copyright {
   opacity: 0.7;
   font-size: 0.9rem;
 }
@@ -649,24 +657,24 @@ a {
   .section {
     padding: 6rem 3rem;
   }
-  
+
   .navbar {
     padding: 1.5rem 3rem;
   }
-  
+
   .navbar.scrolled {
     padding: 1rem 3rem;
   }
-  
+
   .hero {
     padding: 0 3rem;
   }
-  
+
   .about-content {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
-  
+
   .about-image {
     max-width: 300px;
     margin: 0 auto;
@@ -677,41 +685,44 @@ a {
   .section {
     padding: 5rem 2rem;
   }
-  
+
   .navbar {
     padding: 1.5rem 2rem;
   }
-  
+
   .navbar.scrolled {
     padding: 1rem 2rem;
   }
-  
+
   .hero {
     padding: 0 2rem;
   }
-  
-  .navbar-links, .navbar-contact {
+
+  .navbar-links,
+  .navbar-contact {
     display: none;
   }
-  
+
   .menu-toggle {
     display: inline;
   }
-  
+
   .projects-grid {
     grid-template-columns: 1fr;
   }
-  
-  .experience-item, .education-item {
+
+  .experience-item,
+  .education-item {
     grid-template-columns: 60px 1fr;
     gap: 1.5rem;
   }
-  
-  .experience-logo, .education-logo {
+
+  .experience-logo,
+  .education-logo {
     width: 60px;
     height: 60px;
   }
-  
+
   .footer-content {
     flex-direction: column;
     gap: 2rem;
@@ -723,31 +734,32 @@ a {
   .section {
     padding: 4rem 1.5rem;
   }
-  
+
   .navbar {
-    padding: 1rem 1.5rem;
+    padding: 1rem 1.25rem;
   }
-  
+
   .navbar.scrolled {
-    padding: 0.75rem 1.5rem;
+    padding: 0.75rem 1.25rem;
   }
-  
+
   .hero {
     padding: 0 1.5rem;
   }
-  
-  .section-letter, .section-title {
+
+  .section-letter,
+  .section-title {
     font-size: 3rem;
   }
-  
+
   .menu-link {
     font-size: 3rem;
   }
-  
+
   .skills-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .social-links {
     justify-content: center;
   }
@@ -758,7 +770,7 @@ a {
   * {
     cursor: auto !important;
   }
-  
+
   .cursor {
     display: none !important;
   }
@@ -1144,17 +1156,17 @@ a {
   .timeline-container::before {
     left: 30px;
   }
-  
+
   .timeline-dot {
     left: 30px;
   }
-  
+
   .timeline-content {
     width: 100%;
     margin-left: 60px !important;
     padding: 0;
   }
-  
+
   .projects-masonry {
     grid-template-columns: 1fr;
   }
@@ -1164,16 +1176,17 @@ a {
   .timeline-container {
     padding: 20px 0;
   }
-  
+
   .timeline-item {
     margin-bottom: 40px;
   }
-  
-  .company-logo, .education-logo {
+
+  .company-logo,
+  .education-logo {
     width: 50px;
     height: 50px;
   }
-  
+
   .project-image-container {
     height: 200px;
   }
@@ -1181,6 +1194,10 @@ a {
 
 /* Add these media queries */
 @media (max-width: 768px) {
+  .navbar-container {
+    position: relative;
+  }
+
   .menu-toggle {
     display: block;
     background: transparent;
@@ -1189,7 +1206,30 @@ a {
     padding: 0.5rem 1rem;
     border-radius: 4px;
     z-index: 1001;
-    position: relative;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 40px;
+  }
+
+  .navbar-logo {
+    margin-right: 60px;
+  }
+
+
+  .navbar .navbar-container {
+    width: 100%;
+    max-width: 100%;
+    padding-right: 0;
+  }
+
+  .navbar {
+    padding-right: 1.5rem;
+  }
+
+  .navbar.scrolled {
+    padding-right: 1.5rem;
   }
 
   .full-menu {
@@ -1227,6 +1267,16 @@ a {
     flex-direction: column;
     gap: 1rem !important;
   }
+
+  .navbar {
+    padding: 1rem 1.5rem;
+    /* Consistent padding */
+  }
+
+  .navbar.scrolled {
+    padding: 0.75rem 1.5rem;
+    /* Consistent padding when scrolled */
+  }
 }
 
 /* Update existing full-menu styles */
@@ -1257,4 +1307,43 @@ a {
   height: 100%;
   background: rgba(0, 0, 0, 0.8);
   z-index: -1;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Adjust opacity as needed */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  /* Your existing hero-content styles */
 }
