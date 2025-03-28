@@ -48,7 +48,7 @@ const Navbar = () => {
           </div>
           
           <div className="navbar-contact">
-            <a href="/assets/Resume.pdf" className="nav-link">Resume</a>
+            <a href="/assets/resume.pdf" className="nav-link">Resume</a>
           </div>
           
           <button 
