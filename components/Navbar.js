@@ -70,7 +70,7 @@ const Navbar = () => {
             <a href="#work" className="menu-link" onClick={closeMenu}>
               <span className="menu-letter">P</span>rojects
             </a>
-            <a href="/assets/Resume.pdf" className="menu-link" onClick={closeMenu}>
+            <a href="/assets/resume.pdf" className="menu-link" onClick={closeMenu}>
               <span className="menu-letter">R</span>esume
             </a>
           </div>
