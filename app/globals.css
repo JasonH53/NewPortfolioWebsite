@@ -1181,6 +1181,10 @@ a {
     margin-bottom: 40px;
   }
 
+  .timeline-card {
+    width: 80%;
+  }
+
   .company-logo,
   .education-logo {
     width: 50px;
