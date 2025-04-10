@@ -77,6 +77,13 @@ export default function Home() {
 
   const experiences = [
     {
+      companyLogo: "https://upload.wikimedia.org/wikipedia/en/6/6e/University_of_Waterloo_seal.svg",
+      companyName: "University of Waterloo",
+      role: "Undergraduate Research Assistant",
+      date: "May 2025 - Aug 2025",
+      description: "Safe Object Initialization, mentored by Dr. Ondřej Lhoták"
+    },
+    {
       companyLogo: "https://static.cdnlogo.com/logos/h/67/huawei-thumb.png",
       companyName: "Huawei Canada",
       role: "Software Engineer Intern (Compilers)",
