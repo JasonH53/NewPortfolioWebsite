@@ -84,14 +84,14 @@ export default function Home() {
       description: "Safe Object Initialization, mentored by Dr. Ondřej Lhoták"
     },
     {
-      companyLogo: "https://static.cdnlogo.com/logos/h/67/huawei-thumb.png",
+      companyLogo: "https://upload.wikimedia.org/wikipedia/en/thumb/0/04/Huawei_Standard_logo.svg/1200px-Huawei_Standard_logo.svg.png",
       companyName: "Huawei Canada",
       role: "Software Engineer Intern (Compilers)",
       date: "Jan 2025 - Apr 2025",
       description: "Working on Huawei's ML Compiler to improve inference performance on various LLMs"
     },
     {
-      companyLogo: "https://8d3cdb9a.rocketcdn.me/wp-content/uploads/2022/05/imageedit_10_9542891170.png.webp",
+      companyLogo: "https://wusa.ca/wp-content/uploads/2022/05/imageedit_10_9542891170.png.webp",
       companyName: "UW Computer Science Club",
       role: "Software Developer",
       date: "Aug 2024 - Present",
