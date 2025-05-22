@@ -28,19 +28,19 @@ export default function Home() {
     {
       name: 'VoiceLens',
       description: 'Empowering mute individuals with real-time lip reading and translation. Transcribes your lips into audible words in 5+ languages!',
-      link: 'https://devpost.com/software/voicelens',
+      link: 'https://www.youtube.com/watch?v=dIAzoDg1DZA&t=1s',
       image: voicelensImage,
       year: '2024',
       skills: ['React', 'JavaScript', 'AI', 'Computer Vision', 'Hack The North 2024']
     },
-    // {
-    //   name: 'Lacs Compiler',
-    //   description: 'A compiler for a Scala-type language with garbage collection, dynamic memory allocation and more. Coursework for an enriched compilers course, CS 241E.',
-    //   link: 'https://student.cs.uwaterloo.ca/~cs241e/index.shtml',
-    //   image: scalaIcon,
-    //   year: '2024',
-    //   skills: ['Compilers', 'Scala']
-    // },
+    {
+      name: 'Lacs Compiler',
+      description: 'A compiler for a Scala-type language with garbage collection, dynamic memory allocation and more. Coursework for an enriched compilers course, CS 241E.',
+      link: 'https://student.cs.uwaterloo.ca/~cs241e/index.shtml',
+      image: scalaIcon,
+      year: '2024',
+      skills: ['Compilers', 'Scala']
+    },
     {
       name: 'UWCompass',
       description: 'Degree requirement tracker that parses your transcript to identify what courses you need to graduate. Simplifies your course planning process!',
