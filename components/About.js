@@ -36,7 +36,7 @@ export default function Home() {
     {
       name: 'Lacs Compiler',
       description: 'A compiler for a Scala-type language with garbage collection, dynamic memory allocation and more. Coursework for an enriched compilers course, CS 241E.',
-      link: 'https://student.cs.uwaterloo.ca/~cs241e/index.shtml',
+      link: 'https://github.com/JasonH53/LacsCompiler',
       image: scalaIcon,
       year: '2024',
       skills: ['Compilers', 'Scala']
