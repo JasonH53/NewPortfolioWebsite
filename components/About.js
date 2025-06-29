@@ -171,7 +171,7 @@ export default function Home() {
           <p className="hero-description reveal-item">
             Hi! I am Jason, a software developer with a background in Computer Science and AI.
             I am very passionate about machine learning, compilers and anything that intersect it.
-            I am also looking for Winter & Summer 26' internships!
+            I am also looking for Winter & Summer 26&apos; internships!
           </p>
           <div className="hero-cta reveal-item">
             <a href="#about" className="cta-button">
