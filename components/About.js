@@ -8,10 +8,10 @@ import { faLinkedin, faGithub, faMedium } from '@fortawesome/free-brands-svg-ico
 import { faEnvelope, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import chessImage from '../public/assets/chess.png';
 import voicelensImage from '../public/assets/voicelens.png';
-import uwcompassImage from '../public/assets/uwcompass.png';
-import uwschedulerImage from '../public/assets/uwscheduler.png';
 import slmodImage from '../public/assets/slmod.png';
 import scalaIcon from '../public/assets/scala-icon.png';
+import scalarImage from '../public/assets/Scalar.png';
+import codeyImage from '../public/assets/codey.png';
 
 export default function Home() {
   const [activeProject, setActiveProject] = useState(null);
@@ -25,6 +25,22 @@ export default function Home() {
   }, []);
 
   const projects = [
+    {
+      name: 'Scalar',
+      description: 'AI Consulting platform to help grow SMEs in Bay Area and Hong Kong, secured $100k Series A funding.',
+      image: scalarImage,
+      link: 'https://tryscalar.ai',
+      year: '2025',
+      skills: ['NextJS', 'Python', 'LLM Fine Tuning']
+    },
+    {
+      name: 'CodeyBot',
+      description: 'A Discord bot for the UW Computer Science Club, designed to assist with mock interviews, suggestions, and other features. Used by 4,500+ users.',
+      image: codeyImage,
+      link: 'https://github.com/uwcsc/codeybot',
+      year: '2025',
+      skills: ['Python', 'TypeScript', 'MongoDB', 'Flask'],
+    },
     {
       name: 'VoiceLens',
       description: 'Empowering mute individuals with real-time lip reading and translation. Transcribes your lips into audible words in 5+ languages!',
@@ -41,14 +57,14 @@ export default function Home() {
       year: '2024',
       skills: ['Compilers', 'Scala']
     },
-    {
-      name: 'UWCompass',
-      description: 'Degree requirement tracker that parses your transcript to identify what courses you need to graduate. Simplifies your course planning process!',
-      link: 'https://jasonh53.github.io/UWCompass/',
-      image: uwcompassImage,
-      year: '2024',
-      skills: ['React', 'JavaScript']
-    },
+    // {
+    //   name: 'UWCompass',
+    //   description: 'Degree requirement tracker that parses your transcript to identify what courses you need to graduate. Simplifies your course planning process!',
+    //   link: 'https://jasonh53.github.io/UWCompass/',
+    //   image: uwcompassImage,
+    //   year: '2024',
+    //   skills: ['React', 'JavaScript']
+    // },
     {
       name: 'Chess Engine',
       description: 'Chess Engine with 5 levels of AI opponents based on various advanced decision-making algorithms.',
@@ -79,36 +95,30 @@ export default function Home() {
     {
       companyLogo: "https://upload.wikimedia.org/wikipedia/en/6/6e/University_of_Waterloo_seal.svg",
       companyName: "University of Waterloo",
+      role: "Research Assistant",
+      date: "Jul 2025 - Present",
+      description: "Video Diffusion Models Optimization, mentored by Dr. Sihang Liu"
+    },
+    {
+      companyLogo: "https://upload.wikimedia.org/wikipedia/en/6/6e/University_of_Waterloo_seal.svg",
+      companyName: "University of Waterloo",
       role: "Undergraduate Research Assistant",
       date: "May 2025 - Aug 2025",
-      description: "Safe Object Initialization, mentored by Dr. Ondřej Lhoták"
+      description: "Static Analysis for Object Initialization Safety in Scala Compiler, mentored by Dr. Ondřej Lhoták"
     },
     {
       companyLogo: "https://upload.wikimedia.org/wikipedia/en/thumb/0/04/Huawei_Standard_logo.svg/1200px-Huawei_Standard_logo.svg.png",
       companyName: "Huawei Canada",
-      role: "Software Engineer Intern (Compilers)",
+      role: "ML Compiler Engineer Intern",
       date: "Jan 2025 - Apr 2025",
-      description: "Working on Huawei's ML Compiler to improve inference performance on various LLMs"
-    },
-    {
-      companyLogo: "https://wusa.ca/wp-content/uploads/2022/05/imageedit_10_9542891170.png.webp",
-      companyName: "UW Computer Science Club",
-      role: "Software Developer",
-      date: "Aug 2024 - Present",
-      description: "Building CodeyBot used in UWCSC's Discord server, used for mock interviewing, suggestions and other features"
+      description: "Working on Huawei's ML Compiler to improve inference performance, tensor parallelism tool in MLIR"
     },
     {
       companyLogo: "https://upload.wikimedia.org/wikipedia/en/6/6e/University_of_Waterloo_seal.svg",
       companyName: "University of Waterloo",
       role: "STAT 230 Teaching Assistant",
       date: "Sept 2024 - Dec 2024",
-    },
-    {
-      companyLogo: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAbFBMVEVHcEwwfQovfQkwfQoofHIdergwfQkvfQkdergdergdergcerkvfQwdergaetQvfQgder4cerwpfDMvfQwbesMne2UvfQgdergnfEQderUYed8aetMrfVUderkufQwvfQwbesItfCQvfQwvfQwQQfQsAAAAJHRSTlMAE7mLCSeW/3Dv/z8uy4Fjqf7o3P/+64yd///5uLsgsEdTxU/BnGAFAAAAq0lEQVR4Ac3QBQKDQAwAwVACKSd1w+3/b6zgkLovzqAHf5JhXLGRicBCq9jYxBHHjnAkgEmkhmZpcWoyJbLZfbPC5vMFLRVDXeJqvZkCw22Nzdfwd652BvDkTAhXeDM406y4TSyAh5Yo8gPgybAw1w+R41aU6K3tiOHYKdVfUMwUk8LmSUqUKXZvEmo9k4AjaoaPhzbRJoJLTZcUX1YVt2PPi8z8MmJkwIsdAGKTCa5gqFMdAAAAAElFTkSuQmCC",
-      companyName: "Bonumcare",
-      role: "Freelance Software Developer",
-      date: "Jun 2023 - Aug 2023",
-      description: "Engineered Conversation Buddy to chat with lonely elderlies"
+      description: 'Probability and Statistics'
     }
   ];
 
@@ -170,7 +180,7 @@ export default function Home() {
           </div>
           <p className="hero-description reveal-item">
             Hi! I am Jason, a software developer with a background in Computer Science and AI.
-            I am very passionate about machine learning, compilers and anything that intersect it.
+            I am very passionate about machine learning systems, compilers and anything that intersect it.
             I am also looking for Winter & Summer 26&apos; internships!
           </p>
           <div className="hero-cta reveal-item">

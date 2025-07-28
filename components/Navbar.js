@@ -47,9 +47,9 @@ const Navbar = () => {
             <Link href="#work" className="nav-link">Projects</Link>
           </div>
           
-          <div className="navbar-contact">
+          {/* <div className="navbar-contact">
             <a href="/assets/resume.pdf" className="nav-link">Resume</a>
-          </div>
+          </div> */}
           
           <button 
             className="menu-toggle"
