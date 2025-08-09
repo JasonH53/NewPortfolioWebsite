@@ -95,16 +95,9 @@ export default function Home() {
     {
       companyLogo: "https://upload.wikimedia.org/wikipedia/en/6/6e/University_of_Waterloo_seal.svg",
       companyName: "University of Waterloo",
-      role: "Research Assistant",
-      date: "Jul 2025 - Present",
-      description: "Video Diffusion Models Optimization, mentored by Dr. Sihang Liu"
-    },
-    {
-      companyLogo: "https://upload.wikimedia.org/wikipedia/en/6/6e/University_of_Waterloo_seal.svg",
-      companyName: "University of Waterloo",
       role: "Undergraduate Research Assistant",
-      date: "May 2025 - Aug 2025",
-      description: "Static Analysis for Object Initialization Safety in Scala Compiler, mentored by Dr. Ondřej Lhoták"
+      date: "May 2025 - Present",
+      description: "Summer 25': Object Initialization Safety Static Analysis\nFall 25': Video Diffusion Model Optimizations"
     },
     {
       companyLogo: "https://upload.wikimedia.org/wikipedia/en/thumb/0/04/Huawei_Standard_logo.svg/1200px-Huawei_Standard_logo.svg.png",
@@ -214,7 +207,16 @@ export default function Home() {
                       <span className="timeline-date">{exp.date}</span>
                     </div>
                   </div>
-                  <p className="timeline-description">{exp.description}</p>
+                  {/* Replace awkward <br/> separators with a clean bullet list when multiple lines are provided */}
+                  {exp.description.includes('\n') ? (
+                    <ul className="timeline-description-list">
+                      {exp.description.split('\n').map((line, i) => (
+                        <li key={i}>{line}</li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p className="timeline-description">{exp.description}</p>
+                  )}
                 </div>
               </div>
             </div>
