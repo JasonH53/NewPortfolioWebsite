@@ -27,7 +27,7 @@ export default function Home() {
   const projects = [
     {
       name: 'Scalar',
-      description: 'AI Consulting platform to help grow SMEs in Bay Area and Hong Kong, secured $100k Series A funding.',
+      description: 'AI Consulting platform to help grow SMEs in Bay Area and Hong Kong, secured $100k in seed funding.',
       image: scalarImage,
       link: 'https://tryscalar.ai',
       year: '2025',
