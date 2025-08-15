@@ -97,7 +97,7 @@ export default function Home() {
       companyName: "University of Waterloo",
       role: "Undergraduate Research Assistant",
       date: "May 2025 - Present",
-      description: "Summer 25': Object Initialization Safety Static Analysis\nFall 25': Video Diffusion Model Optimizations"
+      description: "Fall 25': Video Diffusion Model Optimizations \n Summer 25': Object Initialization Safety Static Analysis"
     },
     {
       companyLogo: "https://upload.wikimedia.org/wikipedia/en/thumb/0/04/Huawei_Standard_logo.svg/1200px-Huawei_Standard_logo.svg.png",
@@ -112,6 +112,13 @@ export default function Home() {
       role: "STAT 230 Teaching Assistant",
       date: "Sept 2024 - Dec 2024",
       description: 'Probability and Statistics'
+    },
+    {
+      companyLogo: "https://cdn.prod.website-files.com/64884fb058342c1b8717f790/65378e404d708b9edd8ebf0d_64f18cc4384c0eb5977b839a_STEALTHMODE.jpeg",
+      companyName: "Various",
+      role: "Software Developer",
+      date: "Sept 2022 - Present",
+      description: 'Scalar, UWCSC, Bonumcare'
     }
   ];
 
