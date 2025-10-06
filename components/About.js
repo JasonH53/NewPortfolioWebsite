@@ -127,7 +127,7 @@ export default function Home() {
       institutionLogo: "https://upload.wikimedia.org/wikipedia/en/6/6e/University_of_Waterloo_seal.svg",
       institution: "University of Waterloo",
       degree: "Bachelors of Computer Science, Artificial Intelligence Specialization",
-      date: "GPA: 4.0 / 4.0",
+      date: "CAV 90.3%",
       description: "Focusing on Machine Learning and Compilers"
     }
   ];
