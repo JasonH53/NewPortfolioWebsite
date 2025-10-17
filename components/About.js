@@ -100,11 +100,18 @@ export default function Home() {
       description: "Fall 25': Video Diffusion Model Optimizations \n Summer 25': Object Initialization Safety Static Analysis"
     },
     {
+      companyLogo: "https://s3-eu-west-1.amazonaws.com/tpd/logos/646cd93dece5034b1bc5c1c0/0x0.png",
+      companyName: "Super.com",
+      role: "Software Engineer Intern",
+      date: "Sep 2025 - Dec 2025",
+      description: "Building travel product for 30M+ users worldwide"
+    },
+    {
       companyLogo: "https://upload.wikimedia.org/wikipedia/en/thumb/0/04/Huawei_Standard_logo.svg/1200px-Huawei_Standard_logo.svg.png",
       companyName: "Huawei Canada",
-      role: "ML Compiler Engineer Intern",
+      role: "Compiler Engineer Intern",
       date: "Jan 2025 - Apr 2025",
-      description: "Working on Huawei's ML Compiler to improve inference performance, tensor parallelism tool in MLIR"
+      description: "Working on Huawei's ML Compiler, built a tensor parallelism tool in MLIR"
     },
     {
       companyLogo: "https://upload.wikimedia.org/wikipedia/en/6/6e/University_of_Waterloo_seal.svg",
