@@ -93,11 +93,11 @@ export default function Home() {
 
   const experiences = [
     {
-      companyLogo: "https://media.licdn.com/dms/image/v2/D560BAQHNvGy6jnYPmg/company-logo_200_200/B56ZVDV63eHoAI-/0/1740591574812/cerebras_systems_logo?e=2147483647&v=beta&t=dy3IuJzO5Ui2tLfLlVcme5rAWQG5U4WsNDVJ_b4Ccpo",
-      companyName: "Cerebras Systems",
-      role: "ML Stack Engineer Intern",
-      date: "Jan 2026 - Apr 2026",
-      description: "ML Compilers, building world's fastest inference"
+      companyLogo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Microsoft_icon.svg/2048px-Microsoft_icon.svg.png",
+      companyName: "Microsoft AI",
+      role: "Software Engineer Intern",
+      date: "May 2026 - Aug 2026",
+      description: "Core AI, Copilot SLMS on WebGPU"
     },
     {
       companyLogo: "https://upload.wikimedia.org/wikipedia/en/6/6e/University_of_Waterloo_seal.svg",
