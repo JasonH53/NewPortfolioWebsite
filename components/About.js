@@ -92,13 +92,13 @@ export default function Home() {
   ];
 
   const experiences = [
-    {
-      companyLogo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Microsoft_icon.svg/2048px-Microsoft_icon.svg.png",
-      companyName: "Microsoft AI",
-      role: "Software Engineer Intern",
-      date: "May 2026 - Aug 2026",
-      description: "Core AI, Copilot SLMS on WebGPU"
-    },
+    // {
+    //   companyLogo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Microsoft_icon.svg/2048px-Microsoft_icon.svg.png",
+    //   companyName: "Microsoft AI",
+    //   role: "Software Engineer Intern",
+    //   date: "May 2026 - Aug 2026",
+    //   description: "Core AI, Copilot SLMS on WebGPU"
+    // },
     {
       companyLogo: "https://upload.wikimedia.org/wikipedia/en/6/6e/University_of_Waterloo_seal.svg",
       companyName: "University of Waterloo",
