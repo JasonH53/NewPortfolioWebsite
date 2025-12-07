@@ -27,11 +27,11 @@ export default function Home() {
   const projects = [
     {
       name: 'Scalar',
-      description: 'AI Consulting platform to help grow SMEs in Bay Area and Hong Kong, secured $100k in seed funding.',
+      description: 'The last career prep all you will need, secured 100k in seed funding',
       image: scalarImage,
       link: 'https://tryscalar.ai',
       year: '2025',
-      skills: ['NextJS', 'Python', 'LLM Fine Tuning']
+      skills: ['TypeScript', 'Python', 'LLM Fine Tuning']
     },
     {
       name: 'CodeyBot',
@@ -92,13 +92,13 @@ export default function Home() {
   ];
 
   const experiences = [
-    // {
-    //   companyLogo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Microsoft_icon.svg/2048px-Microsoft_icon.svg.png",
-    //   companyName: "Microsoft AI",
-    //   role: "Software Engineer Intern",
-    //   date: "May 2026 - Aug 2026",
-    //   description: "Core AI, Copilot SLMS on WebGPU"
-    // },
+    {
+      companyLogo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Microsoft_icon.svg/2048px-Microsoft_icon.svg.png",
+      companyName: "Microsoft AI",
+      role: "Software Engineer Intern",
+      date: "Incoming",
+      description: "Core AI, Copilot"
+    },
     {
       companyLogo: "https://upload.wikimedia.org/wikipedia/en/6/6e/University_of_Waterloo_seal.svg",
       companyName: "University of Waterloo",
@@ -121,18 +121,11 @@ export default function Home() {
       description: "Working on Huawei's ML Compiler, built a tensor parallelism tool in MLIR"
     },
     {
-      companyLogo: "https://upload.wikimedia.org/wikipedia/en/6/6e/University_of_Waterloo_seal.svg",
-      companyName: "University of Waterloo",
-      role: "STAT 230 Teaching Assistant",
-      date: "Sept 2024 - Dec 2024",
-      description: 'Probability and Statistics'
-    },
-    {
-      companyLogo: "https://cdn.prod.website-files.com/64884fb058342c1b8717f790/65378e404d708b9edd8ebf0d_64f18cc4384c0eb5977b839a_STEALTHMODE.jpeg",
-      companyName: "Various",
-      role: "Software Developer",
-      date: "Sept 2022 - Present",
-      description: 'Scalar, UWCSC, Bonumcare'
+      companyLogo: "https://www.tryscalar.ai/favicon.ico",
+      companyName: "Scalar",
+      role: "CTO, Co-Founder",
+      date: "2025 - Present",
+      description: "Building the last career prep all you will need. tryscalar.ai"
     }
   ];
 
