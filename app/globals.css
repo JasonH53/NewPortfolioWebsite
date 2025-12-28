@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'Minecraftia';
+  src: url('https://cdn.jsdelivr.net/gh/South-Paw/typeface-minecraft@master/Minecraftia-Regular.woff2') format('woff2'),
+    url('https://cdn.jsdelivr.net/gh/South-Paw/typeface-minecraft@master/Minecraftia-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   --text-color: #ffffff;
   --background-color: #000000;
@@ -8,10 +16,14 @@
   --transition-speed: 0.3s;
 
   /* New modern theme tokens */
-  --accent-rgb: 255, 255, 255; /* white accent for a monochrome, majority-black theme */
-  --bg-primary: #000000;       /* page background */
-  --bg-elev-1: #0a0a0a;        /* cards + elevated surfaces */
-  --bg-elev-2: #0f0f0f;        /* higher elevation */
+  --accent-rgb: 255, 255, 255;
+  /* white accent for a monochrome, majority-black theme */
+  --bg-primary: #000000;
+  /* page background */
+  --bg-elev-1: #0a0a0a;
+  /* cards + elevated surfaces */
+  --bg-elev-2: #0f0f0f;
+  /* higher elevation */
   --border-color: rgba(255, 255, 255, 0.08);
   --muted: rgba(255, 255, 255, 0.7);
 }
@@ -231,13 +243,7 @@ a {
 }
 
 .section::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  height: 1px;
-  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.06), transparent);
+  display: none;
 }
 
 .section-header {
@@ -253,13 +259,7 @@ a {
 }
 
 .section-title::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 0;
-  width: 140px;
-  height: 3px;
-  background: linear-gradient(to right, rgba(var(--accent-rgb), 0.9), transparent);
+  display: none;
 }
 
 .section-counter {
@@ -1435,11 +1435,22 @@ a {
 
 /* Project overlay visibility fixes */
 /* Ensure overlay sits above image and actually fades in on hover */
-.project-image-container { position: relative; }
-.project-overlay { z-index: 2; opacity: 0; pointer-events: none; }
+.project-image-container {
+  position: relative;
+}
+
+.project-overlay {
+  z-index: 2;
+  opacity: 0;
+  pointer-events: none;
+}
+
 .project-card:hover .project-overlay,
 .project-item:hover .project-overlay,
-.project-overlay.active { opacity: 1; pointer-events: auto; }
+.project-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
 
 /* Reset legacy overlay styles on details so text isn’t hidden by old rules */
 .project-overlay .project-details {
@@ -1452,4 +1463,6 @@ a {
   animation: none;
 }
 
-.project-overlay .project-details p { color: #fff; }
+.project-overlay .project-details p {
+  color: #fff;
+}

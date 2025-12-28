@@ -1,352 +1,394 @@
 "use client"
 
-import { useState, useEffect, useRef } from 'react';
-import Image from 'next/image';
-import Navbar from '../components/Navbar';
+import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedin, faGithub, faMedium } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope, faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import chessImage from '../public/assets/chess.png';
-import voicelensImage from '../public/assets/voicelens.png';
-import slmodImage from '../public/assets/slmod.png';
-import scalaIcon from '../public/assets/scala-icon.png';
-import scalarImage from '../public/assets/Scalar.png';
-import codeyImage from '../public/assets/codey.png';
+import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
-export default function Home() {
-  const [activeProject, setActiveProject] = useState(null);
-  const projectsRef = useRef(null);
-  const experiencesRef = useRef(null);
-  const aboutRef = useRef(null);
-  const notesRef = useRef(null);
+export default function About() {
+    const [mounted, setMounted] = useState(false);
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+    useEffect(() => {
+        setMounted(true);
+    }, []);
 
-  const projects = [
-    {
-      name: 'Scalar',
-      description: 'The last career prep all you will need, secured 100k in seed funding',
-      image: scalarImage,
-      link: 'https://tryscalar.ai',
-      year: '2025',
-      skills: ['TypeScript', 'Python', 'LLM Fine Tuning']
-    },
-    {
-      name: 'CodeyBot',
-      description: 'A Discord bot for the UW Computer Science Club, designed to assist with mock interviews, suggestions, and other features. Used by 4,500+ users.',
-      image: codeyImage,
-      link: 'https://github.com/uwcsc/codeybot',
-      year: '2025',
-      skills: ['Python', 'TypeScript', 'MongoDB', 'Flask'],
-    },
-    {
-      name: 'VoiceLens',
-      description: 'Empowering mute individuals with real-time lip reading and translation. Transcribes your lips into audible words in 5+ languages!',
-      link: 'https://www.youtube.com/watch?v=dIAzoDg1DZA&t=1s',
-      image: voicelensImage,
-      year: '2024',
-      skills: ['React', 'JavaScript', 'AI', 'Computer Vision', 'Hack The North 2024']
-    },
-    {
-      name: 'Lacs Compiler',
-      description: 'A compiler for a Scala-type language with garbage collection, dynamic memory allocation and more. Coursework for an enriched compilers course, CS 241E.',
-      link: 'https://github.com/JasonH53/LacsCompiler',
-      image: scalaIcon,
-      year: '2024',
-      skills: ['Compilers', 'Scala']
-    },
-    // {
-    //   name: 'UWCompass',
-    //   description: 'Degree requirement tracker that parses your transcript to identify what courses you need to graduate. Simplifies your course planning process!',
-    //   link: 'https://jasonh53.github.io/UWCompass/',
-    //   image: uwcompassImage,
-    //   year: '2024',
-    //   skills: ['React', 'JavaScript']
-    // },
-    {
-      name: 'Chess Engine',
-      description: 'Chess Engine with 5 levels of AI opponents based on various advanced decision-making algorithms.',
-      link: 'https://github.com/pacman-ty/chess-engine',
-      image: chessImage,
-      year: '2023',
-      skills: ['C++', 'AI', 'OOP']
-    },
-    // {
-    //   name: 'UWScheduler',
-    //   description: 'Assignment Planner and Scheduler designed for UWaterloo students, built with MEAN stack.',
-    //   link: 'https://github.com/JasonH53/UWAssignmentPlanner',
-    //   image: uwschedulerImage,
-    //   year: '2023',
-    //   skills: ['Angular', 'MongoDB', 'Express', 'TypeScript']
-    // },
-    {
-      name: 'SLMod',
-      description: 'Utility game modification for Minecraft Hypixel Skyblock with 20+ features to ease your gameplay experience',
-      link: 'https://github.com/JasonH53/SLM',
-      image: slmodImage,
-      year: '2023',
-      skills: ['Java', 'Flask', 'MongoDB']
-    }
-  ];
-
-  const experiences = [
-    {
-      companyLogo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Microsoft_icon.svg/2048px-Microsoft_icon.svg.png",
-      companyName: "Microsoft AI",
-      role: "Software Engineer Intern",
-      date: "Incoming",
-      description: "Core AI, Copilot"
-    },
-    {
-      companyLogo: "https://upload.wikimedia.org/wikipedia/en/6/6e/University_of_Waterloo_seal.svg",
-      companyName: "University of Waterloo",
-      role: "Undergraduate Research Assistant",
-      date: "May 2025 - Present",
-      description: "Fall 25': Video Diffusion Model Optimizations \n Summer 25': Object Initialization Safety Static Analysis"
-    },
-    {
-      companyLogo: "https://s3-eu-west-1.amazonaws.com/tpd/logos/646cd93dece5034b1bc5c1c0/0x0.png",
-      companyName: "Super.com",
-      role: "Software Engineer Intern",
-      date: "Sep 2025 - Dec 2025",
-      description: "Building travel product for 30M+ users worldwide"
-    },
-    {
-      companyLogo: "https://upload.wikimedia.org/wikipedia/en/thumb/0/04/Huawei_Standard_logo.svg/1200px-Huawei_Standard_logo.svg.png",
-      companyName: "Huawei Canada",
-      role: "Compiler Engineer Intern",
-      date: "Jan 2025 - Apr 2025",
-      description: "Working on Huawei's ML Compiler, built a tensor parallelism tool in MLIR"
-    },
-    {
-      companyLogo: "https://www.tryscalar.ai/favicon.ico",
-      companyName: "Scalar",
-      role: "CTO, Co-Founder",
-      date: "2025 - Present",
-      description: "Building the last career prep all you will need. tryscalar.ai"
-    }
-  ];
-
-  const education = [
-    {
-      institutionLogo: "https://upload.wikimedia.org/wikipedia/en/6/6e/University_of_Waterloo_seal.svg",
-      institution: "University of Waterloo",
-      degree: "Bachelors of Computer Science, Artificial Intelligence Specialization",
-      date: "CAV 90.3%",
-      description: "Focusing on Machine Learning and Compilers"
-    }
-  ];
-
-  useEffect(() => {
-    // Reveal animations on scroll
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('reveal');
-          observer.unobserve(entry.target);
+    const experiences = [
+        {
+            companyLogo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Microsoft_icon.svg/2048px-Microsoft_icon.svg.png",
+            companyName: "Microsoft AI",
+            role: "Software Engineer Intern",
+            date: "Incoming"
+        },
+        {
+            companyLogo: "https://s3-eu-west-1.amazonaws.com/tpd/logos/646cd93dece5034b1bc5c1c0/0x0.png",
+            companyName: "Super.com",
+            role: "Software Engineer Intern",
+            date: "Sep 2025 - Dec 2025"
+        },
+        {
+            companyLogo: "https://upload.wikimedia.org/wikipedia/en/thumb/0/04/Huawei_Standard_logo.svg/1200px-Huawei_Standard_logo.svg.png",
+            companyName: "Huawei Canada",
+            role: "Compiler Engineer Intern",
+            date: "Jan 2025 - Apr 2025"
+        },
+        {
+            companyLogo: "https://upload.wikimedia.org/wikipedia/en/6/6e/University_of_Waterloo_seal.svg",
+            companyName: "University of Waterloo",
+            role: "Undergraduate Research Assistant",
+            date: "May 2025 - Present"
+        },
+        {
+            companyLogo: "https://www.tryscalar.ai/favicon.ico",
+            companyName: "Scalar",
+            role: "CTO, Co-Founder",
+            date: "2025 - Present"
         }
-      });
-    }, observerOptions);
+    ];
 
-    document.querySelectorAll('.reveal-item').forEach(el => {
-      observer.observe(el);
-    });
+    const education = [
+        {
+            institutionLogo: "https://upload.wikimedia.org/wikipedia/en/6/6e/University_of_Waterloo_seal.svg",
+            institution: "University of Waterloo",
+            degree: "Bachelors of Computer Science (90.3% CAV)",
+            date: "2023 - 2027"
+        }
+    ];
 
-    return () => {
-      document.querySelectorAll('.reveal-item').forEach(el => {
-        observer.unobserve(el);
-      });
-    };
-  }, []);
+    return (
+        <div className="minimal-page">
+            <style jsx>{`
+        .minimal-page {
+          min-height: 100vh;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 3rem 2rem;
+          max-width: 700px;
+          margin: 0 auto;
+          font-family: 'Minecraftia', monospace;
+          font-weight: 400;
+          font-style: normal
+        }
 
-  return (
-    <div className="container">
-      <Navbar />
+        .header-section {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          margin-bottom: 2rem;
+          gap: 2rem;
+        }
 
-      <header className="hero">
-        <div className="video-background">
-          <video autoPlay muted loop playsInline className="background-video">
-            <source src="https://cdn.prod.website-files.com/630534398d9471ade12fc55f/663bd1303af50b30413aaa1f_Hero%20with%20Post-transcode.mp4" type="video/mp4" />
-          </video>
-          <div className="video-overlay"></div>
-        </div>
-        <div className="hero-content">
-          <h1 className="reveal-item">
-            <span className="hero-letter">J</span>ason
-          </h1>
-          <div className="hero-subtitle reveal-item">
-            Software Developer
-          </div>
-          <p className="hero-description reveal-item">
-            Hi! I am Jason, a software developer with a background in Computer Science and AI.
-            I am very passionate about machine learning systems, compilers and anything that intersect it.
-            I am also looking for Winter & Summer 26&apos; internships!
-          </p>
-          <div className="hero-cta reveal-item">
-            <a href="#about" className="cta-button">
-              See my experiences <FontAwesomeIcon icon={faArrowRight} />
-            </a>
-          </div>
-        </div>
-      </header>
+        .intro-content {
+          flex: 1;
+        }
 
-      <section id="about" className="section" ref={aboutRef}>
-        <div className="section-header">
-          <h2 className="section-title reveal-item">
-            <span className="section-letter">E</span>xperiences
-          </h2>
-        </div>
+        .name {
+          font-size: 3rem;
+          font-weight: 700;
+          margin-bottom: 0.5rem;
+          letter-spacing: -0.02em;
+          font-family: 'Minecraftia', monospace;
+        }
 
-        <div className="timeline-container reveal-item">
-          {experiences.map((exp, index) => (
-            <div key={index} className="timeline-item">
-              <div className="timeline-dot"></div>
-              <div className="timeline-content">
-                <div className="timeline-card">
-                  <div className="timeline-header">
-                    <div className="company-logo">
-                      <img src={exp.companyLogo} alt={`${exp.companyName} logo`} />
+        .minimal-page section::before {
+          display: none;
+        }
+
+        .tagline {
+          font-size: 0.95rem;
+          color: #6ec8e4;
+          margin-bottom: 1.5rem;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+        }
+
+        .pronouns {
+          font-size: 0.75rem;
+          background: rgba(255, 255, 255, 0.1);
+          padding: 0.15rem 0.5rem;
+          border-radius: 4px;
+          color: rgba(255, 255, 255, 0.7);
+        }
+
+        .bio {
+          font-size: 1.1rem;
+          line-height: 1.7;
+          color: rgba(255, 255, 255, 0.8);
+          margin-bottom: 1rem;
+        }
+
+        .profile-image {
+          width: 160px;
+          height: 160px;
+          border-radius: 8px;
+          object-fit: cover;
+          filter: sepia(30%) saturate(150%) hue-rotate(150deg);
+          flex-shrink: 0;
+        }
+
+        .section-title {
+          font-size: 1.3rem;
+          font-weight: 600;
+          margin-bottom: 0rem;
+          margin-top: 1.5rem;
+          color: rgba(255, 255, 255, 0.9);
+          font-family: 'Minecraftia', monospace;
+        }
+
+        .experience-list {
+          width: 100%;
+        }
+
+        .experience-item {
+          display: flex;
+          align-items: center;
+          padding: 0.2rem 0;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+          transition: background 0.2s ease;
+        }
+
+        .experience-item:hover {
+          background: rgba(255, 255, 255, 0.02);
+        }
+
+        .company-logo {
+          width: 24px;
+          height: 24px;
+          border-radius: 4px;
+          object-fit: contain;
+          margin-right: 0.75rem;
+          background: rgba(255, 255, 255, 0.05);
+          padding: 3px;
+        }
+
+        .experience-info {
+          flex: 1;
+        }
+
+        .company-name {
+          font-size: 1.1rem;
+          font-weight: 500;
+          color: rgba(255, 255, 255, 0.95);
+        }
+
+        .role {
+          font-size: 0.95rem;
+          color: rgba(255, 255, 255, 0.5);
+        }
+
+        .date {
+          font-size: 0.95rem;
+          color: #6ec8e4;
+          text-align: right;
+          white-space: nowrap;
+        }
+
+        .education-item {
+          display: flex;
+          align-items: center;
+          padding: 0.4rem 0;
+        }
+
+        .institution-logo {
+          width: 24px;
+          height: 24px;
+          border-radius: 4px;
+          object-fit: contain;
+          margin-right: 0.75rem;
+          background: rgba(255, 255, 255, 0.05);
+          padding: 3px;
+        }
+
+        .institution-info {
+          flex: 1;
+        }
+
+        .institution-name {
+          font-size: 1.1rem;
+          font-weight: 500;
+          color: rgba(255, 255, 255, 0.95);
+        }
+
+        .degree {
+          font-size: 0.95rem;
+          color: rgba(255, 255, 255, 0.5);
+        }
+
+        .footer-section {
+          width: 100%;
+          margin-top: 3rem;
+          padding-top: 2rem;
+          border-top: 1px solid rgba(255, 255, 255, 0.08);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 1rem;
+        }
+
+        .webring {
+          display: flex;
+          align-items: center;
+          gap: 0.75rem;
+        }
+
+        .webring-link {
+          color: rgba(255, 255, 255, 0.5);
+          font-size: 1.25rem;
+          transition: color 0.2s ease;
+          text-decoration: none;
+        }
+
+        .webring-link:hover {
+          color: rgba(255, 255, 255, 0.9);
+        }
+
+        .webring-icon {
+          width: 20px;
+          height: auto;
+          opacity: 0.6;
+        }
+
+        .social-links {
+          display: flex;
+          gap: 1.25rem;
+          margin-top: 0.5rem;
+        }
+
+        .social-link {
+          color: rgba(255, 255, 255, 0.5);
+          font-size: 1.25rem;
+          transition: color 0.2s ease;
+        }
+
+        .social-link:hover {
+          color: rgba(255, 255, 255, 0.9);
+        }
+
+        .social-icon-img {
+          width: 1.25rem;
+          height: 1.25rem;
+          filter: brightness(0) invert(1) opacity(0.5);
+          transition: filter 0.2s ease;
+        }
+
+        .social-link:hover .social-icon-img {
+          filter: brightness(0) invert(1) opacity(0.9);
+        }
+
+        .copyright {
+          font-size: 0.75rem;
+          color: rgba(255, 255, 255, 0.4);
+          margin-top: 1.5rem;
+          text-align: center;
+          width: 100%;
+        }
+
+        @media (max-width: 600px) {
+          .header-section {
+            flex-direction: column-reverse;
+            align-items: center;
+            text-align: center;
+          }
+
+          .profile-image {
+            margin-bottom: 1.5rem;
+          }
+
+          .name {
+            font-size: 2.5rem;
+          }
+
+          .tagline {
+            justify-content: center;
+          }
+
+          .footer-section {
+            flex-direction: column;
+            gap: 1.5rem;
+          }
+        }
+      `}</style>
+
+            <header className="header-section">
+                <div className="intro-content">
+                    <h1 className="name">Jason Hon</h1>
+                    {/* <p className="tagline">
+                        CS @ Waterloo
+                    </p> */}
+                    <p className="bio">
+                        Hiya! I&apos;m an engineer studying Computer Science. Previously ran a YouTube channel with 23k subscribers and 1M views...
+                    </p>
+                    <p className="bio">
+                        I love building ML systems, compilers, anything low level, and more recently, coding contests!
+                    </p>
+                    <p className="bio">
+                        If you are looking for CS 246 notes, you can find it <a href="assets/CS246.pdf" target="_blank" rel="noopener noreferrer">here</a>.
+                    </p>
+                    <div className="social-links">
+                        <a href="https://github.com/JasonH53" target="_blank" rel="noopener noreferrer" className="social-link">
+                            <FontAwesomeIcon icon={faGithub} />
+                        </a>
+                        <a href="https://www.linkedin.com/in/jasonhonhk/" target="_blank" rel="noopener noreferrer" className="social-link">
+                            <FontAwesomeIcon icon={faLinkedin} />
+                        </a>
+                        <a href="https://leetcode.com/STTRAFE" target="_blank" rel="noopener noreferrer" className="social-link">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/LeetCode_Logo_1.png/640px-LeetCode_Logo_1.png" alt="LeetCode" className="social-icon-img" />
+                        </a>
+                        <a href="mailto:jkhhon@uwaterloo.ca" className="social-link">
+                            <FontAwesomeIcon icon={faEnvelope} />
+                        </a>
                     </div>
-                    <div className="company-info">
-                      <h3>{exp.companyName}</h3>
-                      <h4>{exp.role}</h4>
-                      <span className="timeline-date">{exp.date}</span>
+                </div>
+                {/* <img
+                    src="https://avatars.githubusercontent.com/u/62577879"
+                    alt="Profile"
+                    className="profile-image"
+                /> */}
+            </header>
+
+            <section className="experience-list">
+                <h2 className="section-title">My Experience</h2>
+                {experiences.map((exp, index) => (
+                    <div key={index} className="experience-item">
+                        <img src={exp.companyLogo} alt={exp.companyName} className="company-logo" />
+                        <div className="experience-info">
+                            <div className="company-name">{exp.companyName}</div>
+                            <div className="role">{exp.role}</div>
+                        </div>
+                        <div className="date">{exp.date}</div>
                     </div>
-                  </div>
-                  {/* Replace awkward <br/> separators with a clean bullet list when multiple lines are provided */}
-                  {exp.description.includes('\n') ? (
-                    <ul className="timeline-description-list">
-                      {exp.description.split('\n').map((line, i) => (
-                        <li key={i}>{line}</li>
-                      ))}
-                    </ul>
-                  ) : (
-                    <p className="timeline-description">{exp.description}</p>
-                  )}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+                ))}
+            </section>
 
-        <div className="section-header" style={{ marginTop: '6rem' }}>
-          <h2 className="section-title reveal-item">
-            <span className="section-letter">E</span>ducation
-          </h2>
-        </div>
-
-        <div className="education-container reveal-item">
-          {education.map((edu, index) => (
-            <div key={index} className="education-card">
-              <div className="education-header">
-                <div className="education-logo">
-                  <img src={edu.institutionLogo} alt={`${edu.institution} logo`} />
-                </div>
-                <div className="education-info">
-                  <h3>{edu.institution}</h3>
-                  <h4>{edu.degree}</h4>
-                  <span className="education-date">{edu.date}</span>
-                </div>
-              </div>
-              <p className="education-description">{edu.description}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section id="work" className="section" ref={projectsRef}>
-        <div className="section-header">
-          <h2 className="section-title reveal-item">
-            <span className="section-letter">P</span>rojects
-          </h2>
-        </div>
-
-        <div className="projects-masonry reveal-item">
-          {projects.map((project, index) => (
-            <a
-              key={index}
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="project-item"
-              onMouseEnter={() => setActiveProject(index)}
-              onMouseLeave={() => setActiveProject(null)}
-            >
-              <div className="project-card">
-                <div className="project-image-container">
-                  <Image
-                    src={project.image}
-                    alt={project.name}
-                    fill
-                    className="project-image"
-                    style={{ objectFit: 'cover' }}
-                  />
-                  <div className={`project-overlay ${activeProject === index ? 'active' : ''}`}>
-                    <div className="project-details">
-                      <p>{project.description}</p>
+            <section className="experience-list">
+                <h2 className="section-title">Education</h2>
+                {education.map((edu, index) => (
+                    <div key={index} className="education-item">
+                        <img src={edu.institutionLogo} alt={edu.institution} className="institution-logo" />
+                        <div className="institution-info">
+                            <div className="institution-name">{edu.institution}</div>
+                            <div className="degree">{edu.degree}</div>
+                        </div>
+                        <div className="date">{edu.date}</div>
                     </div>
-                  </div>
+                ))}
+            </section>
+
+            <footer className="footer-section">
+                <div className="webring">
+                    <a href="https://cs.uwatering.com/#https://jasonhon.com/?nav=prev" className="webring-link" aria-label="Previous site">←</a>
+                    <img
+                        src='https://cs.uwatering.com/icon.white.svg'
+                        alt='CS Webring'
+                        className="webring-icon"
+                    />
+                    <a href="https://cs.uwatering.com/#https://jasonhon.com/?nav=next" className="webring-link" aria-label="Next site">→</a>
                 </div>
-                <div className="project-content">
-                  <h3 className="project-title">{project.name}</h3>
-                  <span className="project-year">{project.year}</span>
-                  <div className="project-skills">
-                    {project.skills.map((skill, i) => (
-                      <span key={i} className="project-skill">{skill}</span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </a>
-          ))}
+            </footer>
+
+            <p className="copyright">© {new Date().getFullYear()} Jason Hon</p>
         </div>
-      </section>
-
-      <footer className="footer">
-        <div className="footer-content">
-          <div className="footer-left">
-            <div className="webring">
-              <a href="https://cs.uwatering.com/#https://jasonhon.com/?nav=prev" className="webring-link" aria-label="Previous site">←</a>
-              <img
-                src='https://cs.uwatering.com/icon.white.svg'
-                alt='CS Webring'
-                style={{ width: '24px', height: 'auto', opacity: 0.8 }}
-              />
-              <a href="https://cs.uwatering.com/#https://jasonhon.com/?nav=next" className="webring-link" aria-label="Next site">→</a>
-            </div>
-          </div>
-
-          <div className="social-links-container">
-            <div className="social-links">
-              <a href="https://www.linkedin.com/in/jasonhonhk/" target="_blank" rel="noopener noreferrer" className="social-link">
-                <FontAwesomeIcon icon={faLinkedin} size="lg" />
-              </a>
-              <a href="https://github.com/JasonH53" target="_blank" rel="noopener noreferrer" className="social-link">
-                <FontAwesomeIcon icon={faGithub} size="lg" />
-              </a>
-              <a href="https://medium.com/@jasonh53" target="_blank" rel="noopener noreferrer" className="social-link">
-                <FontAwesomeIcon icon={faMedium} size="lg" />
-              </a>
-              <a href="mailto:jason@example.com" className="social-link">
-                <FontAwesomeIcon icon={faEnvelope} size="lg" />
-              </a>
-            </div>
-          </div>
-
-          <div className="footer-right">
-            <div className="footer-location">Hong Kong & Toronto</div>
-            <div className="footer-copyright">©{new Date().getFullYear()} Jason</div>
-          </div>
-        </div>
-      </footer>
-    </div>
-  );
+    );
 }
