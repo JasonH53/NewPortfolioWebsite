@@ -1,394 +1,458 @@
 "use client"
 
-import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import LeetCodeStats from './LeetCodeStats';
 
 export default function About() {
-    const [mounted, setMounted] = useState(false);
+  return (
+    <div className="martin-page">
+      <style jsx>{`
+                .martin-page {
+                    min-height: 100vh;
+                    background-color: #0a0a0a;
+                    background-image: 
+                        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+                    background-size: 40px 40px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 3rem 1.5rem;
+                    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+                }
 
-    useEffect(() => {
-        setMounted(true);
-    }, []);
+                .content-card {
+                    background-color: #1a1a1a;
+                    border-radius: 12px;
+                    padding: 2.5rem 3rem;
+                    max-width: 680px;
+                    width: 100%;
+                    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+                }
 
-    const experiences = [
-        {
-            companyLogo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Microsoft_icon.svg/2048px-Microsoft_icon.svg.png",
-            companyName: "Microsoft AI",
-            role: "Software Engineer Intern",
-            date: "Incoming"
-        },
-        {
-            companyLogo: "https://s3-eu-west-1.amazonaws.com/tpd/logos/646cd93dece5034b1bc5c1c0/0x0.png",
-            companyName: "Super.com",
-            role: "Software Engineer Intern",
-            date: "Sep 2025 - Dec 2025"
-        },
-        {
-            companyLogo: "https://upload.wikimedia.org/wikipedia/en/thumb/0/04/Huawei_Standard_logo.svg/1200px-Huawei_Standard_logo.svg.png",
-            companyName: "Huawei Canada",
-            role: "Compiler Engineer Intern",
-            date: "Jan 2025 - Apr 2025"
-        },
-        {
-            companyLogo: "https://upload.wikimedia.org/wikipedia/en/6/6e/University_of_Waterloo_seal.svg",
-            companyName: "University of Waterloo",
-            role: "Undergraduate Research Assistant",
-            date: "May 2025 - Present"
-        },
-        {
-            companyLogo: "https://www.tryscalar.ai/favicon.ico",
-            companyName: "Scalar",
-            role: "CTO, Co-Founder",
-            date: "2025 - Present"
-        }
-    ];
+                .header-row {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 2rem;
+                    padding-bottom: 1rem;
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+                }
 
-    const education = [
-        {
-            institutionLogo: "https://upload.wikimedia.org/wikipedia/en/6/6e/University_of_Waterloo_seal.svg",
-            institution: "University of Waterloo",
-            degree: "Bachelors of Computer Science (90.3% CAV)",
-            date: "2023 - 2027"
-        }
-    ];
+                .name {
+                    font-size: 1.1rem;
+                    font-weight: 500;
+                    color: #ffffff;
+                    text-decoration: underline;
+                    text-decoration-color: rgba(255, 255, 255, 0.4);
+                    text-underline-offset: 3px;
+                }
 
-    return (
-        <div className="minimal-page">
-            <style jsx>{`
-        .minimal-page {
-          min-height: 100vh;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          padding: 3rem 2rem;
-          max-width: 700px;
-          margin: 0 auto;
-          font-family: 'Minecraftia', monospace;
-          font-weight: 400;
-          font-style: normal
-        }
+                .nav-tab {
+                    font-size: 0.9rem;
+                    color: rgba(255, 255, 255, 0.6);
+                    padding: 0.35rem 0.75rem;
+                    border-radius: 4px;
+                    transition: all 0.2s ease;
+                }
 
-        .header-section {
-          width: 100%;
-          display: flex;
-          justify-content: space-between;
-          align-items: flex-start;
-          margin-bottom: 2rem;
-          gap: 2rem;
-        }
+                .nav-tab:hover {
+                    color: rgba(255, 255, 255, 0.9);
+                    background: rgba(255, 255, 255, 0.05);
+                }
 
-        .intro-content {
-          flex: 1;
-        }
+                .nav-tab.active {
+                    color: #ffffff;
+                    background: rgba(255, 255, 255, 0.08);
+                }
 
-        .name {
-          font-size: 3rem;
-          font-weight: 700;
-          margin-bottom: 0.5rem;
-          letter-spacing: -0.02em;
-          font-family: 'Minecraftia', monospace;
-        }
+                .bullet-list {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                }
 
-        .minimal-page section::before {
-          display: none;
-        }
+                .bullet-item {
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 0.75rem;
+                    margin-bottom: 0.35rem;
+                    font-size: 0.95rem;
+                    line-height: 1.6;
+                    color: rgba(255, 255, 255, 0.85);
+                }
 
-        .tagline {
-          font-size: 0.95rem;
-          color: #6ec8e4;
-          margin-bottom: 1.5rem;
-          display: flex;
-          align-items: center;
-          gap: 0.5rem;
-        }
+                .bullet-diamond {
+                    color: #c9a227;
+                    font-size: 0.6rem;
+                    margin-top: 0.45rem;
+                    flex-shrink: 0;
+                }
 
-        .pronouns {
-          font-size: 0.75rem;
-          background: rgba(255, 255, 255, 0.1);
-          padding: 0.15rem 0.5rem;
-          border-radius: 4px;
-          color: rgba(255, 255, 255, 0.7);
-        }
+                .bullet-arrow {
+                    color: rgba(255, 255, 255, 0.4);
+                    margin-left: 0.25rem;
+                    margin-top: 0.45rem;
+                    flex-shrink: 0;
+                    font-size: 0.8rem;
+                }
 
-        .bio {
-          font-size: 1.1rem;
-          line-height: 1.7;
-          color: rgba(255, 255, 255, 0.8);
-          margin-bottom: 1rem;
-        }
+                .section-label {
+                    font-style: italic;
+                    color: rgba(255, 255, 255, 0.7);
+                }
 
-        .profile-image {
-          width: 160px;
-          height: 160px;
-          border-radius: 8px;
-          object-fit: cover;
-          filter: sepia(30%) saturate(150%) hue-rotate(150deg);
-          flex-shrink: 0;
-        }
+                .highlight {
+                    font-weight: 600;
+                    color: #ffffff;
+                }
 
-        .section-title {
-          font-size: 1.3rem;
-          font-weight: 600;
-          margin-bottom: 0rem;
-          margin-top: 1.5rem;
-          color: rgba(255, 255, 255, 0.9);
-          font-family: 'Minecraftia', monospace;
-        }
+                .underline-link {
+                    text-decoration: underline;
+                    text-decoration-color: rgba(255, 255, 255, 0.4);
+                    text-underline-offset: 2px;
+                    color: #ffffff;
+                    font-weight: 600;
+                    transition: text-decoration-color 0.2s ease;
+                }
 
-        .experience-list {
-          width: 100%;
-        }
+                .underline-link:hover {
+                    text-decoration-color: rgba(255, 255, 255, 0.8);
+                }
 
-        .experience-item {
-          display: flex;
-          align-items: center;
-          padding: 0.2rem 0;
-          border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-          transition: background 0.2s ease;
-        }
+                .muted {
+                    color: rgba(255, 255, 255, 0.5);
+                }
 
-        .experience-item:hover {
-          background: rgba(255, 255, 255, 0.02);
-        }
+                .company-icon {
+                    width: 16px;
+                    height: 16px;
+                    border-radius: 3px;
+                    vertical-align: middle;
+                    margin-left: 0.35rem;
+                    margin-right: 0.25rem;
+                    margin-top: -2px;
+                }
 
-        .company-logo {
-          width: 24px;
-          height: 24px;
-          border-radius: 4px;
-          object-fit: contain;
-          margin-right: 0.75rem;
-          background: rgba(255, 255, 255, 0.05);
-          padding: 3px;
-        }
+                .leetcode-card {
+                    max-width: 100%;
+                    height: auto;
+                    border-radius: 8px;
+                    transition: transform 0.2s ease, opacity 0.2s ease;
+                    opacity: 0.9;
+                }
 
-        .experience-info {
-          flex: 1;
-        }
+                .leetcode-card:hover {
+                    transform: scale(1.02);
+                    opacity: 1;
+                }
 
-        .company-name {
-          font-size: 1.1rem;
-          font-weight: 500;
-          color: rgba(255, 255, 255, 0.95);
-        }
+                .see-work-btn {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 0.5rem;
+                    width: 100%;
+                    padding: 0.9rem 1.5rem;
+                    margin-top: 2rem;
+                    background: transparent;
+                    border: 1px solid rgba(255, 255, 255, 0.15);
+                    border-radius: 8px;
+                    color: rgba(255, 255, 255, 0.8);
+                    font-size: 0.9rem;
+                    font-family: inherit;
+                    cursor: pointer;
+                    transition: all 0.2s ease;
+                }
 
-        .role {
-          font-size: 0.95rem;
-          color: rgba(255, 255, 255, 0.5);
-        }
+                .see-work-btn:hover {
+                    background: rgba(255, 255, 255, 0.05);
+                    border-color: rgba(255, 255, 255, 0.25);
+                    color: #ffffff;
+                }
 
-        .date {
-          font-size: 0.95rem;
-          color: #6ec8e4;
-          text-align: right;
-          white-space: nowrap;
-        }
+                .see-work-underline {
+                    text-decoration: underline;
+                    text-underline-offset: 2px;
+                }
 
-        .education-item {
-          display: flex;
-          align-items: center;
-          padding: 0.4rem 0;
-        }
+                .signature {
+                    font-family: 'Brush Script MT', 'Segoe Script', cursive;
+                    font-size: 3.5rem;
+                    color: rgba(255, 255, 255, 0.15);
+                    text-align: center;
+                    margin-top: 2.5rem;
+                    margin-bottom: 1.5rem;
+                    letter-spacing: 2px;
+                }
 
-        .institution-logo {
-          width: 24px;
-          height: 24px;
-          border-radius: 4px;
-          object-fit: contain;
-          margin-right: 0.75rem;
-          background: rgba(255, 255, 255, 0.05);
-          padding: 3px;
-        }
+                .footer-section {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    width: 100%;
+                    max-width: 680px;
+                    padding-top: 1rem;
+                }
 
-        .institution-info {
-          flex: 1;
-        }
+                .social-links {
+                    display: flex;
+                    gap: 1rem;
+                    align-items: center;
+                }
 
-        .institution-name {
-          font-size: 1.1rem;
-          font-weight: 500;
-          color: rgba(255, 255, 255, 0.95);
-        }
+                .social-link {
+                    color: rgba(255, 255, 255, 0.5);
+                    font-size: 1.1rem;
+                    transition: color 0.2s ease;
+                }
 
-        .degree {
-          font-size: 0.95rem;
-          color: rgba(255, 255, 255, 0.5);
-        }
+                .social-link:hover {
+                    color: rgba(255, 255, 255, 0.9);
+                }
 
-        .footer-section {
-          width: 100%;
-          margin-top: 3rem;
-          padding-top: 2rem;
-          border-top: 1px solid rgba(255, 255, 255, 0.08);
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 1rem;
-        }
+                .social-icon-img {
+                    width: 1.1rem;
+                    height: 1.1rem;
+                    filter: brightness(0) invert(1) opacity(0.5);
+                    transition: filter 0.2s ease;
+                    vertical-align: middle;
+                }
 
-        .webring {
-          display: flex;
-          align-items: center;
-          gap: 0.75rem;
-        }
+                .social-link:hover .social-icon-img {
+                    filter: brightness(0) invert(1) opacity(0.9);
+                }
 
-        .webring-link {
-          color: rgba(255, 255, 255, 0.5);
-          font-size: 1.25rem;
-          transition: color 0.2s ease;
-          text-decoration: none;
-        }
+                .webring {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.75rem;
+                }
 
-        .webring-link:hover {
-          color: rgba(255, 255, 255, 0.9);
-        }
+                .webring-link {
+                    color: rgba(255, 255, 255, 0.5);
+                    font-size: 1rem;
+                    transition: color 0.2s ease;
+                    text-decoration: none;
+                }
 
-        .webring-icon {
-          width: 20px;
-          height: auto;
-          opacity: 0.6;
-        }
+                .webring-link:hover {
+                    color: rgba(255, 255, 255, 0.9);
+                }
 
-        .social-links {
-          display: flex;
-          gap: 1.25rem;
-          margin-top: 0.5rem;
-        }
+                .webring-icon {
+                    width: 18px;
+                    height: auto;
+                    opacity: 0.6;
+                }
 
-        .social-link {
-          color: rgba(255, 255, 255, 0.5);
-          font-size: 1.25rem;
-          transition: color 0.2s ease;
-        }
+                .copyright {
+                    font-size: 0.75rem;
+                    color: rgba(255, 255, 255, 0.4);
+                    margin-top: 1.5rem;
+                    text-align: left;
+                    width: 100%;
+                    max-width: 680px;
+                }
 
-        .social-link:hover {
-          color: rgba(255, 255, 255, 0.9);
-        }
+                .sub-bullet {
+                    margin-left: 1.5rem;
+                }
 
-        .social-icon-img {
-          width: 1.25rem;
-          height: 1.25rem;
-          filter: brightness(0) invert(1) opacity(0.5);
-          transition: filter 0.2s ease;
-        }
+                @media (max-width: 600px) {
+                    .martin-page {
+                        padding: 2rem 1rem;
+                    }
 
-        .social-link:hover .social-icon-img {
-          filter: brightness(0) invert(1) opacity(0.9);
-        }
+                    .content-card {
+                        padding: 1.75rem 1.5rem;
+                    }
 
-        .copyright {
-          font-size: 0.75rem;
-          color: rgba(255, 255, 255, 0.4);
-          margin-top: 1.5rem;
-          text-align: center;
-          width: 100%;
-        }
+                    .header-row {
+                        flex-direction: column;
+                        gap: 1rem;
+                        align-items: flex-start;
+                    }
 
-        @media (max-width: 600px) {
-          .header-section {
-            flex-direction: column-reverse;
-            align-items: center;
-            text-align: center;
-          }
+                    .signature {
+                        font-size: 2.5rem;
+                    }
 
-          .profile-image {
-            margin-bottom: 1.5rem;
-          }
+                    .footer-section {
+                        flex-direction: column;
+                        gap: 1.5rem;
+                        align-items: flex-start;
+                    }
 
-          .name {
-            font-size: 2.5rem;
-          }
+                    .bullet-item {
+                        font-size: 0.9rem;
+                    }
+                }
+            `}</style>
 
-          .tagline {
-            justify-content: center;
-          }
-
-          .footer-section {
-            flex-direction: column;
-            gap: 1.5rem;
-          }
-        }
-      `}</style>
-
-            <header className="header-section">
-                <div className="intro-content">
-                    <h1 className="name">Jason Hon</h1>
-                    {/* <p className="tagline">
-                        CS @ Waterloo
-                    </p> */}
-                    <p className="bio">
-                        Hiya! I&apos;m an engineer studying Computer Science. Previously ran a YouTube channel with 23k subscribers and 1M views...
-                    </p>
-                    <p className="bio">
-                        I love building ML systems, compilers, anything low level, and more recently, coding contests!
-                    </p>
-                    <p className="bio">
-                        If you are looking for CS 246 notes, you can find it <a href="assets/CS246.pdf" target="_blank" rel="noopener noreferrer">here</a>.
-                    </p>
-                    <div className="social-links">
-                        <a href="https://github.com/JasonH53" target="_blank" rel="noopener noreferrer" className="social-link">
-                            <FontAwesomeIcon icon={faGithub} />
-                        </a>
-                        <a href="https://www.linkedin.com/in/jasonhonhk/" target="_blank" rel="noopener noreferrer" className="social-link">
-                            <FontAwesomeIcon icon={faLinkedin} />
-                        </a>
-                        <a href="https://leetcode.com/STTRAFE" target="_blank" rel="noopener noreferrer" className="social-link">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/LeetCode_Logo_1.png/640px-LeetCode_Logo_1.png" alt="LeetCode" className="social-icon-img" />
-                        </a>
-                        <a href="mailto:jkhhon@uwaterloo.ca" className="social-link">
-                            <FontAwesomeIcon icon={faEnvelope} />
-                        </a>
-                    </div>
-                </div>
-                {/* <img
-                    src="https://avatars.githubusercontent.com/u/62577879"
-                    alt="Profile"
-                    className="profile-image"
-                /> */}
-            </header>
-
-            <section className="experience-list">
-                <h2 className="section-title">My Experience</h2>
-                {experiences.map((exp, index) => (
-                    <div key={index} className="experience-item">
-                        <img src={exp.companyLogo} alt={exp.companyName} className="company-logo" />
-                        <div className="experience-info">
-                            <div className="company-name">{exp.companyName}</div>
-                            <div className="role">{exp.role}</div>
-                        </div>
-                        <div className="date">{exp.date}</div>
-                    </div>
-                ))}
-            </section>
-
-            <section className="experience-list">
-                <h2 className="section-title">Education</h2>
-                {education.map((edu, index) => (
-                    <div key={index} className="education-item">
-                        <img src={edu.institutionLogo} alt={edu.institution} className="institution-logo" />
-                        <div className="institution-info">
-                            <div className="institution-name">{edu.institution}</div>
-                            <div className="degree">{edu.degree}</div>
-                        </div>
-                        <div className="date">{edu.date}</div>
-                    </div>
-                ))}
-            </section>
-
-            <footer className="footer-section">
-                <div className="webring">
-                    <a href="https://cs.uwatering.com/#https://jasonhon.com/?nav=prev" className="webring-link" aria-label="Previous site">←</a>
-                    <img
-                        src='https://cs.uwatering.com/icon.white.svg'
-                        alt='CS Webring'
-                        className="webring-icon"
-                    />
-                    <a href="https://cs.uwatering.com/#https://jasonhon.com/?nav=next" className="webring-link" aria-label="Next site">→</a>
-                </div>
-            </footer>
-
-            <p className="copyright">© {new Date().getFullYear()} Jason Hon</p>
+      <div className="content-card">
+        <div className="header-row">
+          <span className="name">Jason Hon</span>
         </div>
-    );
+
+        <ul className="bullet-list">
+          {/* Current Position */}
+          <li className="bullet-item">
+            <span className="bullet-diamond">◆</span>
+            <span>
+              incoming software engineer intern @ <a href="https://microsoft.ai/" target="_blank" rel="noopener noreferrer" className="underline-link"><Image src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Microsoft_icon.svg/2048px-Microsoft_icon.svg.png" alt="Microsoft" width={16} height={16} className="company-icon" style={{ display: 'inline', verticalAlign: 'middle' }} unoptimized /><span className="highlight">Microsoft AI</span></a>
+            </span>
+          </li>
+          <li className="bullet-item">
+            <span className="bullet-diamond">◆</span>
+            <span>
+              CS & AI
+              <Image src="https://upload.wikimedia.org/wikipedia/en/6/6e/University_of_Waterloo_seal.svg" alt="Waterloo" width={16} height={16} className="company-icon" style={{ display: 'inline', verticalAlign: 'middle' }} unoptimized /><span className="highlight">Waterloo</span>
+            </span>
+          </li>
+          {/* Currently */}
+          <li className="bullet-item" style={{ marginTop: '0.5rem' }}>
+            <span className="bullet-diamond">◆</span>
+            <span className="section-label">currently:</span>
+          </li>
+          <li className="bullet-item sub-bullet">
+            <span className="bullet-arrow">↳</span>
+            <span>
+              co-founding <a href="https://www.tryscalar.ai" target="_blank" rel="noopener noreferrer" className="underline-link">scalar</a> <span className="muted">(AI-powered interview prep)</span>
+            </span>
+          </li>
+          <li className="bullet-item sub-bullet">
+            <span className="bullet-arrow">↳</span>
+            <span>
+              co-authoring <a href="https://syn.uwaterloo.ca/" target="_blank" rel="noopener noreferrer" className="underline-link">a ml systems paper</a> on mixed diffusion models
+            </span>
+          </li>
+
+          {/* Previously */}
+          <li className="bullet-item" style={{ marginTop: '0.5rem' }}>
+            <span className="bullet-diamond">◆</span>
+            <span className="section-label">previously:</span>
+          </li>
+          <li className="bullet-item sub-bullet">
+            <span className="bullet-arrow">↳</span>
+            <span>
+              software engineer intern @ <a href="https://www.super.com" target="_blank" rel="noopener noreferrer" className="underline-link"><Image src="https://s3-eu-west-1.amazonaws.com/tpd/logos/646cd93dece5034b1bc5c1c0/0x0.png" alt="Super.com" width={16} height={16} className="company-icon" style={{ display: 'inline', verticalAlign: 'middle' }} unoptimized /><span className="highlight">Super.com</span></a>
+            </span>
+          </li>
+          <li className="bullet-item sub-bullet">
+            <span className="bullet-arrow">↳</span>
+            <span>
+              compiler engineer intern @ <a href="https://support.huaweicloud.com/intl/en-us/usermanual-hce/hce_02_0051.html" target="_blank" rel="noopener noreferrer" className="underline-link"><Image src="https://upload.wikimedia.org/wikipedia/en/thumb/0/04/Huawei_Standard_logo.svg/1200px-Huawei_Standard_logo.svg.png" alt="Huawei" width={16} height={16} className="company-icon" style={{ display: 'inline', verticalAlign: 'middle' }} unoptimized /><span className="highlight">Huawei Canada</span></a>
+            </span>
+          </li>
+          <li className="bullet-item sub-bullet">
+            <span className="bullet-arrow">↳</span>
+            <span>
+              research assistant @ <a href="https://plg.uwaterloo.ca/" target="_blank" rel="noopener noreferrer" className="underline-link"><Image src="https://upload.wikimedia.org/wikipedia/en/6/6e/University_of_Waterloo_seal.svg" alt="UWaterloo" width={16} height={16} className="company-icon" style={{ display: 'inline', verticalAlign: 'middle' }} unoptimized /><span className="highlight">Waterloo PLG</span></a>
+            </span>
+          </li>
+
+          {/* What I've been building */}
+          <li className="bullet-item" style={{ marginTop: '0.5rem' }}>
+            <span className="bullet-diamond">◆</span>
+            <span className="section-label">aside:</span>
+          </li>
+          <li className="bullet-item sub-bullet">
+            <span className="bullet-arrow">↳</span>
+            <span>
+              ran a <span className="highlight">youtube channel</span> <span className="muted">(22k subs, 3M views)</span>
+            </span>
+          </li>
+          <li className="bullet-item sub-bullet">
+            <span className="bullet-arrow">↳</span>
+            <span>
+              love working on <span className="highlight">ml systems</span>, <span className="highlight">compilers</span>, <span className="highlight">C++</span>, and low-level stuff
+            </span>
+          </li>
+          <li className="bullet-item sub-bullet">
+            <span className="bullet-arrow">↳</span>
+            <span>
+              more recently, started enjoying <a href="https://leetcode.com/u/STTRAFE/" target="_blank" rel="noopener noreferrer" className="underline-link">leetcode contests</a> <span className="muted"></span>
+            </span>
+          </li>
+          <li className="bullet-item sub-bullet" style={{ marginTop: '0.5rem' }}>
+            <span className="bullet-arrow" style={{ visibility: 'hidden' }}>↳</span>
+            <LeetCodeStats />
+          </li>
+
+          {/* Resources */}
+          <li className="bullet-item" style={{ marginTop: '0.5rem' }}>
+            <span className="bullet-diamond">◆</span>
+            <span className="section-label">typesetted notes (courses I enjoyed):</span>
+          </li>
+          <li className="bullet-item sub-bullet">
+            <span className="bullet-arrow">↳</span>
+            <span>
+              <a href="assets/CS246.pdf" target="_blank" rel="noopener noreferrer" className="underline-link">CS 246 notes</a> <span className="muted">(Object-Oriented Programming)</span>
+            </span>
+          </li>
+          <li className="bullet-item sub-bullet">
+            <span className="bullet-arrow">↳</span>
+            <span>
+              <a href="assets/STAT230.pdf" target="_blank" rel="noopener noreferrer" className="underline-link">STAT 230 notes</a> <span className="muted">(Probability)</span>
+            </span>
+          </li>
+          <li className="bullet-item sub-bullet">
+            <span className="bullet-arrow">↳</span>
+            <span>
+              <a href="assets/MATH_239.pdf" target="_blank" rel="noopener noreferrer" className="underline-link">MATH 239 notes</a> <span className="muted">(Combinatorics)</span>
+            </span>
+          </li>
+          <li className="bullet-item sub-bullet">
+            <span className="bullet-arrow">↳</span>
+            <span>
+              <a href="assets/MATH_136.pdf" target="_blank" rel="noopener noreferrer" className="underline-link">MATH 136 notes</a> <span className="muted">(Linear Algebra)</span>
+            </span>
+          </li>
+          <li className="bullet-item sub-bullet">
+            <span className="bullet-arrow">↳</span>
+            <span>
+              <a href="assets/MATH_138.pdf" target="_blank" rel="noopener noreferrer" className="underline-link">MATH 138 notes</a> <span className="muted">(Calculus II)</span>
+            </span>
+          </li>
+        </ul>
+      </div>
+
+      <footer className="footer-section">
+        <div className="social-links">
+          <a href="https://github.com/JasonH53" target="_blank" rel="noopener noreferrer" className="social-link">
+            <FontAwesomeIcon icon={faGithub} />
+          </a>
+          <a href="https://www.linkedin.com/in/jasonhonhk/" target="_blank" rel="noopener noreferrer" className="social-link">
+            <FontAwesomeIcon icon={faLinkedin} />
+          </a>
+          <a href="https://leetcode.com/STTRAFE" target="_blank" rel="noopener noreferrer" className="social-link">
+            <Image src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/LeetCode_Logo_1.png/640px-LeetCode_Logo_1.png" alt="LeetCode" width={20} height={20} className="social-icon-img" unoptimized />
+          </a>
+          <a href="mailto:jkhhon@uwaterloo.ca" className="social-link">
+            <FontAwesomeIcon icon={faEnvelope} />
+          </a>
+        </div>
+
+        <div className="webring">
+          <a href="https://cs.uwatering.com/#https://jasonhon.com/?nav=prev" className="webring-link" aria-label="Previous site">←</a>
+          <Image
+            src="https://cs.uwatering.com/icon.white.svg"
+            alt="CS Webring"
+            width={18}
+            height={18}
+            className="webring-icon"
+            unoptimized
+          />
+          <a href="https://cs.uwatering.com/#https://jasonhon.com/?nav=next" className="webring-link" aria-label="Next site">→</a>
+        </div>
+      </footer>
+
+      <p className="copyright">© {new Date().getFullYear()} Jason Hon - Hong Kong & Toronto</p>
+    </div >
+  );
 }
