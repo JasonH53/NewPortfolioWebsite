@@ -1,5 +1,6 @@
 "use client"
 
+import { useState } from 'react';
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
@@ -7,6 +8,9 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import LeetCodeStats from './LeetCodeStats';
 
 export default function About() {
+  const [asideOpen, setAsideOpen] = useState(false);
+  const [notesOpen, setNotesOpen] = useState(false);
+
   return (
     <div className="martin-page">
       <style jsx>{`
@@ -36,8 +40,9 @@ export default function About() {
 
                 .header-row {
                     display: flex;
-                    justify-content: space-between;
+                    justify-content: flex-start;
                     align-items: center;
+                    gap: 0.5rem;
                     margin-bottom: 2rem;
                     padding-bottom: 1rem;
                     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -47,9 +52,6 @@ export default function About() {
                     font-size: 1.1rem;
                     font-weight: 500;
                     color: #ffffff;
-                    text-decoration: underline;
-                    text-decoration-color: rgba(255, 255, 255, 0.4);
-                    text-underline-offset: 3px;
                 }
 
                 .nav-tab {
@@ -263,6 +265,54 @@ export default function About() {
                     margin-left: 1.5rem;
                 }
 
+                .collapsible-header {
+                    cursor: pointer;
+                    user-select: none;
+                    transition: all 0.2s ease;
+                }
+
+                .collapsible-header .section-label {
+                    text-decoration: underline;
+                    text-decoration-style: dotted;
+                    text-decoration-color: rgba(255, 255, 255, 0.3);
+                    text-underline-offset: 3px;
+                }
+
+                .collapsible-header:hover .section-label {
+                    text-decoration-color: rgba(255, 255, 255, 0.7);
+                    color: rgba(255, 255, 255, 0.95);
+                }
+
+                .collapsible-header:hover .toggle-arrow {
+                    color: rgba(255, 255, 255, 0.8);
+                }
+
+                .toggle-arrow {
+                    font-style: normal;
+                    display: inline-block;
+                    margin-left: 0.35rem;
+                    transition: transform 0.2s ease;
+                    font-size: 0.7rem;
+                    color: rgba(255, 255, 255, 0.5);
+                }
+
+                .toggle-arrow.open {
+                    transform: rotate(90deg);
+                }
+
+                .collapsible-content {
+                    max-height: 0;
+                    overflow: hidden;
+                    transition: max-height 0.3s ease-out, opacity 0.2s ease;
+                    opacity: 0;
+                }
+
+                .collapsible-content.open {
+                    max-height: 1000px;
+                    opacity: 1;
+                    transition: max-height 0.4s ease-in, opacity 0.3s ease;
+                }
+
                 @media (max-width: 600px) {
                     .martin-page {
                         padding: 2rem 1rem;
@@ -296,28 +346,27 @@ export default function About() {
 
       <div className="content-card">
         <div className="header-row">
+          <Image src="/assets/headshot.png" alt="Jason Hon" width={40} height={40} style={{ borderRadius: '50%', marginRight: '0.75rem' }} />
           <span className="name">Jason Hon</span>
         </div>
 
         <ul className="bullet-list">
-          {/* Current Position */}
           <li className="bullet-item">
             <span className="bullet-diamond">◆</span>
             <span>
-              incoming software engineer intern @ <a href="https://microsoft.ai/" target="_blank" rel="noopener noreferrer" className="underline-link"><Image src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Microsoft_icon.svg/2048px-Microsoft_icon.svg.png" alt="Microsoft" width={16} height={16} className="company-icon" style={{ display: 'inline', verticalAlign: 'middle' }} unoptimized /><span className="highlight">Microsoft AI</span></a>
-            </span>
-          </li>
-          <li className="bullet-item">
-            <span className="bullet-diamond">◆</span>
-            <span>
-              CS & AI
-              <Image src="https://upload.wikimedia.org/wikipedia/en/6/6e/University_of_Waterloo_seal.svg" alt="Waterloo" width={16} height={16} className="company-icon" style={{ display: 'inline', verticalAlign: 'middle' }} unoptimized /><span className="highlight">Waterloo</span>
+              CS & AI <Image src="https://upload.wikimedia.org/wikipedia/en/6/6e/University_of_Waterloo_seal.svg" alt="Waterloo" width={16} height={16} className="company-icon" style={{ display: 'inline', verticalAlign: 'middle' }} unoptimized /><span className="highlight"> University of Waterloo</span>
             </span>
           </li>
           {/* Currently */}
           <li className="bullet-item" style={{ marginTop: '0.5rem' }}>
             <span className="bullet-diamond">◆</span>
             <span className="section-label">currently:</span>
+          </li>
+          <li className="bullet-item sub-bullet">
+            <span className="bullet-arrow">↳</span>
+            <span>
+              incoming software engineer intern @ <Image src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Microsoft_icon.svg/2048px-Microsoft_icon.svg.png" alt="Microsoft" width={16} height={16} className="company-icon" style={{ display: 'inline', verticalAlign: 'middle' }} unoptimized /> <a href="https://microsoft.ai/" target="_blank" rel="noopener noreferrer" className="underline-link"><span className="highlight">Microsoft AI</span></a>
+            </span>
           </li>
           <li className="bullet-item sub-bullet">
             <span className="bullet-arrow">↳</span>
@@ -340,85 +389,89 @@ export default function About() {
           <li className="bullet-item sub-bullet">
             <span className="bullet-arrow">↳</span>
             <span>
-              software engineer intern @ <a href="https://www.super.com" target="_blank" rel="noopener noreferrer" className="underline-link"><Image src="https://s3-eu-west-1.amazonaws.com/tpd/logos/646cd93dece5034b1bc5c1c0/0x0.png" alt="Super.com" width={16} height={16} className="company-icon" style={{ display: 'inline', verticalAlign: 'middle' }} unoptimized /><span className="highlight">Super.com</span></a>
+              software engineer intern <Image src="https://s3-eu-west-1.amazonaws.com/tpd/logos/646cd93dece5034b1bc5c1c0/0x0.png" alt="Super.com" width={16} height={16} className="company-icon" style={{ display: 'inline', verticalAlign: 'middle' }} unoptimized /> <a href="https://www.super.com" target="_blank" rel="noopener noreferrer" className="underline-link"><span className="highlight">Super.com</span></a>
             </span>
           </li>
           <li className="bullet-item sub-bullet">
             <span className="bullet-arrow">↳</span>
             <span>
-              compiler engineer intern @ <a href="https://support.huaweicloud.com/intl/en-us/usermanual-hce/hce_02_0051.html" target="_blank" rel="noopener noreferrer" className="underline-link"><Image src="https://upload.wikimedia.org/wikipedia/en/thumb/0/04/Huawei_Standard_logo.svg/1200px-Huawei_Standard_logo.svg.png" alt="Huawei" width={16} height={16} className="company-icon" style={{ display: 'inline', verticalAlign: 'middle' }} unoptimized /><span className="highlight">Huawei Canada</span></a>
+              compiler engineer intern <Image src="https://upload.wikimedia.org/wikipedia/en/thumb/0/04/Huawei_Standard_logo.svg/1200px-Huawei_Standard_logo.svg.png" alt="Huawei" width={16} height={16} className="company-icon" style={{ display: 'inline', verticalAlign: 'middle' }} unoptimized /> <a href="https://support.huaweicloud.com/intl/en-us/usermanual-hce/hce_02_0051.html" target="_blank" rel="noopener noreferrer" className="underline-link"><span className="highlight">Huawei Canada</span></a>
             </span>
           </li>
           <li className="bullet-item sub-bullet">
             <span className="bullet-arrow">↳</span>
             <span>
-              research assistant @ <a href="https://plg.uwaterloo.ca/" target="_blank" rel="noopener noreferrer" className="underline-link"><Image src="https://upload.wikimedia.org/wikipedia/en/6/6e/University_of_Waterloo_seal.svg" alt="UWaterloo" width={16} height={16} className="company-icon" style={{ display: 'inline', verticalAlign: 'middle' }} unoptimized /><span className="highlight">Waterloo PLG</span></a>
+              research assistant <Image src="https://upload.wikimedia.org/wikipedia/en/6/6e/University_of_Waterloo_seal.svg" alt="UWaterloo" width={16} height={16} className="company-icon" style={{ display: 'inline', verticalAlign: 'middle' }} unoptimized /> <a href="https://plg.uwaterloo.ca/" target="_blank" rel="noopener noreferrer" className="underline-link"><span className="highlight">Waterloo PLG</span></a>
             </span>
           </li>
 
           {/* What I've been building */}
-          <li className="bullet-item" style={{ marginTop: '0.5rem' }}>
+          <li className="bullet-item collapsible-header" style={{ marginTop: '0.5rem' }} onClick={() => setAsideOpen(!asideOpen)}>
             <span className="bullet-diamond">◆</span>
-            <span className="section-label">aside:</span>
+            <span className="section-label">aside:<span className={`toggle-arrow ${asideOpen ? 'open' : ''}`}>▶</span></span>
           </li>
-          <li className="bullet-item sub-bullet">
-            <span className="bullet-arrow">↳</span>
-            <span>
-              ran a <span className="highlight">youtube channel</span> <span className="muted">(22k subs, 3M views)</span>
-            </span>
-          </li>
-          <li className="bullet-item sub-bullet">
-            <span className="bullet-arrow">↳</span>
-            <span>
-              love working on <span className="highlight">ml systems</span>, <span className="highlight">compilers</span>, <span className="highlight">C++</span>, and low-level stuff
-            </span>
-          </li>
-          <li className="bullet-item sub-bullet">
-            <span className="bullet-arrow">↳</span>
-            <span>
-              more recently, started enjoying <a href="https://leetcode.com/u/STTRAFE/" target="_blank" rel="noopener noreferrer" className="underline-link">leetcode contests</a> <span className="muted"></span>
-            </span>
-          </li>
-          <li className="bullet-item sub-bullet" style={{ marginTop: '0.5rem' }}>
-            <span className="bullet-arrow" style={{ visibility: 'hidden' }}>↳</span>
-            <LeetCodeStats />
-          </li>
+          <div className={`collapsible-content ${asideOpen ? 'open' : ''}`}>
+            <li className="bullet-item sub-bullet">
+              <span className="bullet-arrow">↳</span>
+              <span>
+                ran a <span className="highlight">youtube channel</span> <span className="muted">(22k subs, 3M views)</span>
+              </span>
+            </li>
+            <li className="bullet-item sub-bullet">
+              <span className="bullet-arrow">↳</span>
+              <span>
+                love working on <span className="highlight">ml systems</span>, <span className="highlight">compilers</span>, <span className="highlight">C++</span>, and low-level stuff
+              </span>
+            </li>
+            <li className="bullet-item sub-bullet">
+              <span className="bullet-arrow">↳</span>
+              <span>
+                more recently, started enjoying <a href="https://leetcode.com/u/STTRAFE/" target="_blank" rel="noopener noreferrer" className="underline-link">leetcode contests</a> <span className="muted"></span>
+              </span>
+            </li>
+            <li className="bullet-item sub-bullet" style={{ marginTop: '0.5rem' }}>
+              <span className="bullet-arrow" style={{ visibility: 'hidden' }}>↳</span>
+              <LeetCodeStats />
+            </li>
+          </div>
 
           {/* Resources */}
-          <li className="bullet-item" style={{ marginTop: '0.5rem' }}>
+          <li className="bullet-item collapsible-header" style={{ marginTop: '0.5rem' }} onClick={() => setNotesOpen(!notesOpen)}>
             <span className="bullet-diamond">◆</span>
-            <span className="section-label">typesetted notes (courses I enjoyed):</span>
+            <span className="section-label">typesetted notes (courses I enjoyed):<span className={`toggle-arrow ${notesOpen ? 'open' : ''}`}>▶</span></span>
           </li>
-          <li className="bullet-item sub-bullet">
-            <span className="bullet-arrow">↳</span>
-            <span>
-              <a href="assets/CS246.pdf" target="_blank" rel="noopener noreferrer" className="underline-link">CS 246 notes</a> <span className="muted">(Object-Oriented Programming)</span>
-            </span>
-          </li>
-          <li className="bullet-item sub-bullet">
-            <span className="bullet-arrow">↳</span>
-            <span>
-              <a href="assets/STAT230.pdf" target="_blank" rel="noopener noreferrer" className="underline-link">STAT 230 notes</a> <span className="muted">(Probability)</span>
-            </span>
-          </li>
-          <li className="bullet-item sub-bullet">
-            <span className="bullet-arrow">↳</span>
-            <span>
-              <a href="assets/MATH_239.pdf" target="_blank" rel="noopener noreferrer" className="underline-link">MATH 239 notes</a> <span className="muted">(Combinatorics)</span>
-            </span>
-          </li>
-          <li className="bullet-item sub-bullet">
-            <span className="bullet-arrow">↳</span>
-            <span>
-              <a href="assets/MATH_136.pdf" target="_blank" rel="noopener noreferrer" className="underline-link">MATH 136 notes</a> <span className="muted">(Linear Algebra)</span>
-            </span>
-          </li>
-          <li className="bullet-item sub-bullet">
-            <span className="bullet-arrow">↳</span>
-            <span>
-              <a href="assets/MATH_138.pdf" target="_blank" rel="noopener noreferrer" className="underline-link">MATH 138 notes</a> <span className="muted">(Calculus II)</span>
-            </span>
-          </li>
+          <div className={`collapsible-content ${notesOpen ? 'open' : ''}`}>
+            <li className="bullet-item sub-bullet">
+              <span className="bullet-arrow">↳</span>
+              <span>
+                <a href="assets/CS246.pdf" target="_blank" rel="noopener noreferrer" className="underline-link">CS 246 notes</a> <span className="muted">(Object-Oriented Programming)</span>
+              </span>
+            </li>
+            <li className="bullet-item sub-bullet">
+              <span className="bullet-arrow">↳</span>
+              <span>
+                <a href="assets/STAT230.pdf" target="_blank" rel="noopener noreferrer" className="underline-link">STAT 230 notes</a> <span className="muted">(Probability)</span>
+              </span>
+            </li>
+            <li className="bullet-item sub-bullet">
+              <span className="bullet-arrow">↳</span>
+              <span>
+                <a href="assets/MATH_239.pdf" target="_blank" rel="noopener noreferrer" className="underline-link">MATH 239 notes</a> <span className="muted">(Combinatorics)</span>
+              </span>
+            </li>
+            <li className="bullet-item sub-bullet">
+              <span className="bullet-arrow">↳</span>
+              <span>
+                <a href="assets/MATH_136.pdf" target="_blank" rel="noopener noreferrer" className="underline-link">MATH 136 notes</a> <span className="muted">(Linear Algebra)</span>
+              </span>
+            </li>
+            <li className="bullet-item sub-bullet">
+              <span className="bullet-arrow">↳</span>
+              <span>
+                <a href="assets/MATH_138.pdf" target="_blank" rel="noopener noreferrer" className="underline-link">MATH 138 notes</a> <span className="muted">(Calculus II)</span>
+              </span>
+            </li>
+          </div>
         </ul>
       </div>
 
@@ -430,11 +483,11 @@ export default function About() {
           <a href="https://www.linkedin.com/in/jasonhonhk/" target="_blank" rel="noopener noreferrer" className="social-link">
             <FontAwesomeIcon icon={faLinkedin} />
           </a>
-          <a href="https://leetcode.com/STTRAFE" target="_blank" rel="noopener noreferrer" className="social-link">
-            <Image src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/LeetCode_Logo_1.png/640px-LeetCode_Logo_1.png" alt="LeetCode" width={20} height={20} className="social-icon-img" unoptimized />
-          </a>
           <a href="mailto:jkhhon@uwaterloo.ca" className="social-link">
             <FontAwesomeIcon icon={faEnvelope} />
+          </a>
+          <a href="https://leetcode.com/STTRAFE" target="_blank" rel="noopener noreferrer" className="social-link">
+            <Image src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/LeetCode_Logo_1.png/640px-LeetCode_Logo_1.png" alt="LeetCode" width={20} height={20} className="social-icon-img" unoptimized />
           </a>
         </div>
 
