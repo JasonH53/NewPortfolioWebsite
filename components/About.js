@@ -348,6 +348,8 @@ export default function About() {
         <div className="header-row">
           <Image src="/assets/headshot.png" alt="Jason Hon" width={40} height={40} style={{ borderRadius: '50%', marginRight: '0.75rem' }} />
           <span className="name">Jason Hon</span>
+          <li className="bullet-item">
+          </li>
         </div>
 
         <ul className="bullet-list">
@@ -366,12 +368,6 @@ export default function About() {
             <span className="bullet-arrow">↳</span>
             <span>
               incoming software engineer intern @ <Image src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Microsoft_icon.svg/2048px-Microsoft_icon.svg.png" alt="Microsoft" width={16} height={16} className="company-icon" style={{ display: 'inline', verticalAlign: 'middle' }} unoptimized /> <a href="https://microsoft.ai/" target="_blank" rel="noopener noreferrer" className="underline-link"><span className="highlight">Microsoft AI</span></a>
-            </span>
-          </li>
-          <li className="bullet-item sub-bullet">
-            <span className="bullet-arrow">↳</span>
-            <span>
-              co-founding <a href="https://www.tryscalar.ai" target="_blank" rel="noopener noreferrer" className="underline-link">scalar</a> <span className="muted">(AI-powered interview prep)</span>
             </span>
           </li>
           <li className="bullet-item sub-bullet">
@@ -411,6 +407,12 @@ export default function About() {
             <span className="section-label">aside:<span className={`toggle-arrow ${asideOpen ? 'open' : ''}`}>▶</span></span>
           </li>
           <div className={`collapsible-content ${asideOpen ? 'open' : ''}`}>
+            <li className="bullet-item sub-bullet">
+              <span className="bullet-arrow">↳</span>
+              <span>
+                co-founding <a href="https://www.tryscalar.ai" target="_blank" rel="noopener noreferrer" className="underline-link">scalar</a> <span className="muted">(AI-powered interview prep)</span>
+              </span>
+            </li>
             <li className="bullet-item sub-bullet">
               <span className="bullet-arrow">↳</span>
               <span>
