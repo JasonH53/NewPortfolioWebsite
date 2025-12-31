@@ -33,6 +33,8 @@ export async function GET() {
                 query,
                 variables: { username },
             }),
+            // Updates every day
+            next: { revalidate: 86400 },
         });
 
         if (!response.ok) {
