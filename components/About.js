@@ -403,9 +403,9 @@ export default function About() {
           <div className={`collapsible-content ${asideOpen ? 'open' : ''}`}>
             <li className="bullet-item sub-bullet">
               <span className="bullet-arrow">↳</span>
-              <span>
+              {/* <span>
                 co-founding <a href="https://www.tryscalar.ai" target="_blank" rel="noopener noreferrer" className="underline-link">scalar</a> <span className="muted">(AI-powered interview prep)</span>
-              </span>
+              </span> */}
             </li>
             <li className="bullet-item sub-bullet">
               <span className="bullet-arrow">↳</span>
