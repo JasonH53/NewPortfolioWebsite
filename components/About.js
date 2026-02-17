@@ -367,6 +367,12 @@ export default function About() {
           <li className="bullet-item sub-bullet">
             <span className="bullet-arrow">↳</span>
             <span>
+              incoming ai compiler engineer intern <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8lkrqKUowZdLozuN9nWkiMpMtsNVqovkc4w&s" alt="NVDA" width={16} height={16} className="company-icon" style={{ display: 'inline', verticalAlign: 'middle' }} unoptimized /> <a href="https://www.nvidia.com/en-us/" target="_blank" rel="noopener noreferrer" className="underline-link"><span className="highlight">NVIDIA</span></a>
+            </span>
+          </li>
+          <li className="bullet-item sub-bullet">
+            <span className="bullet-arrow">↳</span>
+            <span>
               co-authoring <a href="https://syn.uwaterloo.ca/" target="_blank" rel="noopener noreferrer" className="underline-link">a ml systems paper</a> on mixed diffusion models
             </span>
           </li>
