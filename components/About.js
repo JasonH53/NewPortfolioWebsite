@@ -373,13 +373,7 @@ export default function About() {
           <li className="bullet-item sub-bullet">
             <span className="bullet-arrow">↳</span>
             <span>
-              co-authoring <a href="https://syn.uwaterloo.ca/" target="_blank" rel="noopener noreferrer" className="underline-link">a ml systems paper</a> on security of diffusion models
-            </span>
-          </li>
-          <li className="bullet-item sub-bullet">
-            <span className="bullet-arrow">↳</span>
-            <span>
-              co-authored <a href="https://arxiv.org/abs/2603.07815" target="_blank" rel="noopener noreferrer" className="underline-link">HybridStitch</a>, a paper on mixed diffusion models
+              working on <a href="https://syn.uwaterloo.ca/" target="_blank" rel="noopener noreferrer" className="underline-link">a ml systems paper</a> on security of diffusion models
             </span>
           </li>
 
@@ -387,6 +381,12 @@ export default function About() {
           <li className="bullet-item" style={{ marginTop: '0.5rem' }}>
             <span className="bullet-diamond">◆</span>
             <span className="section-label">previously:</span>
+          </li>
+          <li className="bullet-item sub-bullet">
+            <span className="bullet-arrow">↳</span>
+            <span>
+              co-first author for <a href="https://arxiv.org/abs/2603.07815" target="_blank" rel="noopener noreferrer" className="underline-link">HybridStitch</a>, a paper on mixed diffusion models
+            </span>
           </li>
           <li className="bullet-item sub-bullet">
             <span className="bullet-arrow">↳</span>
