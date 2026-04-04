@@ -5,7 +5,6 @@ import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import LeetCodeStats from './LeetCodeStats';
 
 export default function About() {
   const [asideOpen, setAsideOpen] = useState(false);
@@ -428,18 +427,14 @@ export default function About() {
             <li className="bullet-item sub-bullet">
               <span className="bullet-arrow">↳</span>
               <span>
-                love working on <span className="highlight">ml systems</span>, <span className="highlight">compilers</span>, <span className="highlight">C++</span>, and low-level stuff
+                peaked #1 <a href="https://www.fortnite.com" target="_blank" rel="noopener noreferrer" className="underline-link">fortnite</a> in hong kong and #37 regionally as seen on <a href="https://fortnite-esports.fandom.com/wiki/Strafe_(Hong_Kong_Player)" target="_blank" rel="noopener noreferrer" className="underline-link">gamepedia</a>
               </span>
             </li>
             <li className="bullet-item sub-bullet">
               <span className="bullet-arrow">↳</span>
               <span>
-                more recently, started enjoying <a href="https://leetcode.com/u/STTRAFE/" target="_blank" rel="noopener noreferrer" className="underline-link">leetcode contests</a> <span className="muted"></span>
+                love working on <span className="highlight">ml systems</span>, <span className="highlight">compilers</span>, <span className="highlight">C++</span>, and low-level stuff
               </span>
-            </li>
-            <li className="bullet-item sub-bullet" style={{ marginTop: '0.5rem' }}>
-              <span className="bullet-arrow" style={{ visibility: 'hidden' }}>↳</span>
-              <LeetCodeStats />
             </li>
           </div>
 
@@ -495,7 +490,7 @@ export default function About() {
             <FontAwesomeIcon icon={faEnvelope} />
           </a>
           <a href="https://leetcode.com/STTRAFE" target="_blank" rel="noopener noreferrer" className="social-link">
-            <Image src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/LeetCode_Logo_1.png/640px-LeetCode_Logo_1.png" alt="LeetCode" width={20} height={20} className="social-icon-img" unoptimized />
+            <Image src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" alt="LeetCode" width={20} height={20} className="social-icon-img" unoptimized />
           </a>
         </div>
 
