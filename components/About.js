@@ -358,6 +358,12 @@ export default function About() {
               CS & AI <Image src="https://upload.wikimedia.org/wikipedia/en/6/6e/University_of_Waterloo_seal.svg" alt="Waterloo" width={16} height={16} className="company-icon" style={{ display: 'inline', verticalAlign: 'middle' }} unoptimized /><span className="highlight"> University of Waterloo</span>
             </span>
           </li>
+          <li className="bullet-item">
+            <span className="bullet-diamond">◆</span>
+              <span>
+                love working on <span className="highlight">ml systems</span>, <span className="highlight">compilers</span>, <span className="highlight">C++</span>, and low-level stuff
+              </span>
+          </li>
           {/* Currently */}
           <li className="bullet-item" style={{ marginTop: '0.5rem' }}>
             <span className="bullet-diamond">◆</span>
@@ -409,19 +415,13 @@ export default function About() {
           {/* What I've been building */}
           <li className="bullet-item collapsible-header" style={{ marginTop: '0.5rem' }} onClick={() => setAsideOpen(!asideOpen)}>
             <span className="bullet-diamond">◆</span>
-            <span className="section-label">aside:<span className={`toggle-arrow ${asideOpen ? 'open' : ''}`}>▶</span></span>
+            <span className="section-label">gaming: (click me)<span className={`toggle-arrow ${asideOpen ? 'open' : ''}`}>▶</span></span>
           </li>
           <div className={`collapsible-content ${asideOpen ? 'open' : ''}`}>
-            {/* <li className="bullet-item sub-bullet">
-              <span className="bullet-arrow">↳</span>
-              <span>
-                co-founding <a href="https://www.tryscalar.ai" target="_blank" rel="noopener noreferrer" className="underline-link">scalar</a> <span className="muted">(AI-powered interview prep)</span>
-              </span>
-            </li> */}
             <li className="bullet-item sub-bullet">
               <span className="bullet-arrow">↳</span>
               <span>
-                ran a <span className="highlight">youtube channel</span> <span className="muted">(22k subs, 3M views)</span>
+                ran a <a href="https://hypixel.net" target="_blank" rel="noopener noreferrer" className="underline-link">minecraft</a> <span className="highlight">youtube channel</span> <span className="muted">(22k subs, 3M views)</span>
               </span>
             </li>
             <li className="bullet-item sub-bullet">
@@ -433,7 +433,7 @@ export default function About() {
             <li className="bullet-item sub-bullet">
               <span className="bullet-arrow">↳</span>
               <span>
-                love working on <span className="highlight">ml systems</span>, <span className="highlight">compilers</span>, <span className="highlight">C++</span>, and low-level stuff
+                global elite and <a href="https://www.faceit.com/en/players/Strafer/cs2/stats" target="_blank" rel="noopener noreferrer" className="underline-link">faceit level 10</a> in csgo/cs2, peaked immortal in <a href="https://playvalorant.com" target="_blank" rel="noopener noreferrer" className="underline-link">valorant</a>, masters in <a href="https://apexlegends.com" target="_blank" rel="noopener noreferrer" className="underline-link">apex legends</a>
               </span>
             </li>
           </div>
