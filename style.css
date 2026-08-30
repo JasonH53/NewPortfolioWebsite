@@ -1,0 +1,122 @@
+html {
+  background: #fff;
+  color: #000;
+  font-family: Georgia, "Iowan Old Style", "Times New Roman", Times, serif;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  max-width: 34rem;
+  margin: 0 auto;
+  padding: 6rem 1.5rem 4rem;
+}
+
+h1 {
+  font-size: 1.15rem;
+  font-weight: normal;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+h2 {
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: normal;
+  margin: 0 0 0.4rem;
+}
+
+p {
+  margin: 0;
+}
+
+.subtitle {
+  margin-top: 0.4rem;
+}
+
+section {
+  margin-top: 1.6rem;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin-top: 0.5rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid #ccc;
+}
+
+a:hover {
+  border-bottom-color: #000;
+}
+
+.muted {
+  color: #888;
+}
+
+summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary h2 {
+  display: inline;
+}
+
+summary h2::after {
+  content: " +";
+  color: #888;
+}
+
+details[open] summary h2::after {
+  content: " \2212";
+}
+
+details[open] summary {
+  margin-bottom: 0.4rem;
+}
+
+footer {
+  margin-top: 2.4rem;
+}
+
+.links a {
+  margin-right: 1rem;
+}
+
+.webring-icon {
+  vertical-align: -0.2em;
+  opacity: 0.75;
+}
+
+a:has(> .webring-icon) {
+  border-bottom: none;
+}
+
+a:hover > .webring-icon {
+  opacity: 1;
+}
+
+.role-desc {
+  display: block;
+  color: #888;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
