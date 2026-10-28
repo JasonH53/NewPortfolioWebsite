@@ -120,3 +120,136 @@ a:hover > .webring-icon {
   font-size: 0.92rem;
   line-height: 1.5;
 }
+
+.tabs {
+  margin-bottom: 2.4rem;
+}
+
+.tabs a {
+  margin-right: 1.2rem;
+  color: #888;
+  border-bottom-color: transparent;
+}
+
+.tabs a:hover {
+  color: #000;
+}
+
+.tabs a.active {
+  color: #000;
+  border-bottom-color: #000;
+}
+
+.post-list li {
+  margin-top: 1.2rem;
+}
+
+.post-list a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem;
+  border-bottom: none;
+}
+
+.post-title {
+  display: block;
+  font-weight: bold;
+}
+
+.post-list a:hover .post-title {
+  text-decoration: underline;
+  text-decoration-color: #ccc;
+}
+
+.post-date {
+  display: block;
+  color: #888;
+  font-size: 0.92rem;
+}
+
+.post-summary {
+  display: block;
+  margin-top: 0.3rem;
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.back {
+  display: inline-block;
+  margin-bottom: 0.6rem;
+  color: #888;
+  font-size: 1.3rem;
+  border-bottom: none;
+}
+
+.back:hover {
+  color: #000;
+}
+
+.post-thumb {
+  flex-shrink: 0;
+  width: 7rem;
+  height: 4.5rem;
+  object-fit: cover;
+}
+
+.post-heading {
+  font-size: 1.4rem;
+  font-weight: bold;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+.post-body {
+  margin-top: 1.6rem;
+}
+
+.post-body p,
+.post-body ul,
+.post-body ol,
+.post-body pre,
+.post-body blockquote {
+  margin: 0 0 1rem;
+}
+
+.post-body ul {
+  list-style: disc;
+  padding-left: 1.4rem;
+}
+
+.post-body ol {
+  padding-left: 1.4rem;
+}
+
+.post-body h1,
+.post-body h2,
+.post-body h3 {
+  font-style: normal;
+  font-weight: bold;
+  letter-spacing: normal;
+  text-transform: none;
+  margin: 1.6rem 0 0.6rem;
+}
+
+.post-body img {
+  max-width: 100%;
+}
+
+.post-body code {
+  font-size: 0.88em;
+}
+
+.post-body pre {
+  overflow-x: auto;
+  padding: 0.8rem 1rem;
+  background: #f5f5f5;
+  line-height: 1.5;
+}
+
+.post-body blockquote {
+  padding-left: 1rem;
+  border-left: 2px solid #ccc;
+  color: #555;
+}
