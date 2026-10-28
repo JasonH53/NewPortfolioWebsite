@@ -36,8 +36,6 @@ class Solution {
     }
 public:
     vector<string> validateCoupons(vector<string>& code, vector<string>& businessLine, vector<bool>& isActive) {
-        size_t n = code.size();
-
         std::vector<std::pair<Category, std::string>> valid_codes;
         
         for (auto &&[code, line, active] : std::views::zip(code, businessLine, isActive)) {
